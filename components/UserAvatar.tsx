@@ -25,15 +25,15 @@ function UserAvatar({ name, imageUrl, title }: UserAvatarProps) {
     <Link href={`/stories/${title}`} onClick={handleStoryClick}>
       <div className="flex flex-col items-center ">
         {!finished ? (
-          <div className="h-20 w-20 bg-linear-to-tr from-[#833ab4] via-[#fd1d1d] to-[#fcb045] rounded-full content-center">
-            <Avatar className="h-19/20 w-19/20 place-self-center border-1 border-white">
+          <div className="h-20 w-20 bg-linear-to-tr from-[#833ab4] via-[#fd1d1d] to-[#fcb045] rounded-full flex items-center justify-center">
+            <Avatar className="h-19/20 w-19/20 border-1 border-white">
               <AvatarImage src={imageUrl} alt={name} className="object-cover" />
               <AvatarFallback>{name.substring(0, 2)}</AvatarFallback>
             </Avatar>
           </div>
         ) : (
-          <div className="h-20 w-20 bg-[#363636] rounded-full content-center">
-            <Avatar className="h-19/20 w-19/20 place-self-center border-1 border-white">
+          <div className="h-20 w-20 bg-[#363636] rounded-full rounded-full flex items-center">
+            <Avatar className="h-19/20 w-19/20 border-1 border-white">
               <AvatarImage src={imageUrl} alt={name} className="object-cover" />
               <AvatarFallback>{name.substring(0, 2)}</AvatarFallback>
             </Avatar>

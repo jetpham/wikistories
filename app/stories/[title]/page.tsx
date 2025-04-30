@@ -9,9 +9,5 @@ export default async function Page({
 }) {
   const { title } = await params;
 
-  return (
-    <AspectRatio ratio={220 / 390}>
-      <Image></Image>
-    </AspectRatio>
-  );
+  return <AspectRatio ratio={220 / 390}>hello</AspectRatio>;
 }

@@ -10,7 +10,7 @@ This file overall represent the users api endpoint. It would represent the frien
  * Currently we grab the top 25 most-viewed wikipedia articles and return a json object of their names and url_titles
  * This could be replaced in the future with a database request for the friends of the curren't user
  */
-export async function GET(_request: Request) {
+export async function GET() {
   const url = "https://en.wikipedia.org/wiki/Wikipedia:Top_25_Report";
 
   try {
@@ -82,7 +82,7 @@ This would probably be more integrated with a "friend invite" system.
 
 Will always return 404 because it's not a real endpoint
 */
-export async function POST(request: Request) {
+export async function POST() {
   return new Response(null, {
     status: 404,
   });
@@ -95,7 +95,7 @@ Within the context of instagram, this could be notification settings, or "close 
 
 Will always return 404 because it's not a real endpoint
 */
-export async function PUT(request: Request) {
+export async function PUT() {
   return new Response(null, {
     status: 404,
   });
@@ -106,7 +106,7 @@ Removes a friend fro ma user's friend list
 
 Will always return 404 because it's not a real endpoint
 */
-export async function DELETE(request: Request) {
+export async function DELETE() {
   return new Response(null, {
     status: 404,
   });

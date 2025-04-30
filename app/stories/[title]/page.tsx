@@ -8,5 +8,5 @@ export default async function Page({
 }) {
   const { title } = await params;
   const stories = await getStoriesForUser(title);
-  return <Story stories={stories} />;
+  return <div className="bg-black/70 h-full w-full flex items-center justify-center"><Story stories={stories} /></div>;
 }

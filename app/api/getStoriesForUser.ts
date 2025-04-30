@@ -6,6 +6,7 @@ This file represents the stories endpoint for users. If you are intereacting wit
  * Get the images and alt text of their stories given a user name.
  *
  * For a given user, we hit the wikipedia api endpoint and get all of the media sources for that user. Then we map it to just be [{src, alt}, ...] to simplify things. It's a takehome afterall lol.
+ * I'm also capping images to 5 per juts for simplicity sake
  */
 export async function getStoriesForUser(
   user: string,
@@ -40,7 +41,7 @@ export async function getStoriesForUser(
       }),
     );
 
-    return mappedItems;
+    return mappedItems.slice(0, 5);
   } catch (error: unknown) {
     console.error("Error fetching data:", error);
     throw new Error("Failed to fetch data from Wikipedia.");

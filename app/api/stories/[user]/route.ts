@@ -41,16 +41,18 @@ export async function GET({ params }: { params: Promise<{ user: string }> }) {
       );
     }
 
-    const mappedItems = data.items.map((item: any) => ({
-      src: new URL("https://" + item.srcset?.[0]?.src) || "",
-      alt: item.caption?.text || "",
-    }));
+    const mappedItems = data.items.map(
+      (item: { srcset: { src: string }[]; caption: { text: string } }) => ({
+        src: new URL("https://" + item.srcset?.[0]?.src) || "",
+        alt: item.caption?.text || "",
+      }),
+    );
 
     return new Response(JSON.stringify(mappedItems), {
       status: 200,
       headers: { "Content-Type": "application/json" },
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Error fetching data:", error);
     return new Response(
       JSON.stringify({ error: "Failed to fetch data from Wikipedia." }),

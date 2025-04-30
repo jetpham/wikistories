@@ -40,7 +40,7 @@ export async function GET() {
         const id = $(cells.eq(0)).text();
         const link = $(cells.eq(1)).find("a"); // Select the <a> tag in the second <td>
         const name = link.text().trim();
-        let title = link.attr("href");
+        const title = link.attr("href");
         const article = "https://en.wikipedia.org/wiki/" + title;
         const img = $(cells.eq(4)).find("img").attr("src");
 
@@ -61,10 +61,10 @@ export async function GET() {
         "Content-Type": "application/json",
       },
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Error fetching or parsing data:", error);
     return new Response(
-      JSON.stringify({ error: error.message || "An error occurred" }),
+      JSON.stringify({ error: String(error) || "An error occurred" }),
       {
         status: 500,
         headers: {

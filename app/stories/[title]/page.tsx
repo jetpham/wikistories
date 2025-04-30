@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 export default async function Page({
@@ -9,5 +7,5 @@ export default async function Page({
 }) {
   const { title } = await params;
 
-  return <AspectRatio ratio={220 / 390}>hello</AspectRatio>;
+  return <AspectRatio ratio={220 / 390}>{title}</AspectRatio>;
 }

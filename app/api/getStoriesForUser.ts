@@ -7,7 +7,9 @@ This file represents the stories endpoint for users. If you are intereacting wit
  *
  * For a given user, we hit the wikipedia api endpoint and get all of the media sources for that user. Then we map it to just be [{src, alt}, ...] to simplify things. It's a takehome afterall lol.
  */
-export async function getStoriesForUser(user: string) {
+export async function getStoriesForUser(
+  user: string,
+): Promise<{ src: string; alt: string }[]> {
   try {
     const wikiEndpoint = `https://en.wikipedia.org/api/rest_v1/page/media-list/${user}`;
     const response = await fetch(wikiEndpoint, {
@@ -20,24 +22,15 @@ export async function getStoriesForUser(user: string) {
     if (!response.ok) {
       const errorBody = await response.text(); // Attempt to read the error body
       console.error("Wikipedia API Error:", response.status, errorBody);
-      return new Response(
-        JSON.stringify({
-          error: `Failed to fetch from Wikipedia: ${response.status} - ${errorBody}`,
-        }),
-        {
-          status: response.status,
-          headers: { "Content-Type": "application/json" },
-        },
+      throw new Error(
+        `Failed to fetch from Wikipedia: ${response.status} - ${errorBody}`,
       );
     }
 
     const data = await response.json();
 
     if (!data.items || !Array.isArray(data.items)) {
-      return new Response(
-        JSON.stringify({ error: "Invalid data format from Wikipedia." }),
-        { status: 500, headers: { "Content-Type": "application/json" } },
-      );
+      throw new Error("Invalid data format from Wikipedia.");
     }
 
     const mappedItems = data.items.map(
@@ -47,16 +40,10 @@ export async function getStoriesForUser(user: string) {
       }),
     );
 
-    return new Response(JSON.stringify(mappedItems), {
-      status: 200,
-      headers: { "Content-Type": "application/json" },
-    });
+    return mappedItems;
   } catch (error: unknown) {
     console.error("Error fetching data:", error);
-    return new Response(
-      JSON.stringify({ error: "Failed to fetch data from Wikipedia." }),
-      { status: 500, headers: { "Content-Type": "application/json" } },
-    );
+    throw new Error("Failed to fetch data from Wikipedia.");
   }
 }
 

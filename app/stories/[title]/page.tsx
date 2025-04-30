@@ -1,4 +1,5 @@
-import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { getStoriesForUser } from "@/app/api/getStoriesForUser";
+import { Story } from "@/components/Story";
 
 export default async function Page({
   params,
@@ -6,6 +7,6 @@ export default async function Page({
   params: Promise<{ title: string }>;
 }) {
   const { title } = await params;
-
-  return <AspectRatio ratio={220 / 390}>{title}</AspectRatio>;
+  const stories = await getStoriesForUser(title);
+  return <Story stories={stories} />;
 }

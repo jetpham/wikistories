@@ -1,4 +1,3 @@
-import { getStoriesForUser } from "@/app/api/getStoriesForUser";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import {
   Carousel,

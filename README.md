@@ -3,6 +3,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 References:
 
 https://github.com/vercel/nextgram
+https://gradient.page/ui-gradients/instagram
 
 ## Getting Started
 

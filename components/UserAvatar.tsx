@@ -8,7 +8,7 @@ import Link from "next/link";
 
 interface UserAvatarProps {
   name: string;
-  imageUrl: URL;
+  imageUrl: string;
   title: string;
 }
 
@@ -24,11 +24,7 @@ function UserAvatar({ name, imageUrl, title }: UserAvatarProps) {
     <Link href={`/stories/${title}`} onClick={handleStoryClick}>
       <div className="flex flex-col items-center">
         <Avatar className="h-20 w-20">
-          <AvatarImage
-            src={String(imageUrl)}
-            alt={name}
-            className="object-cover"
-          />
+          <AvatarImage src={imageUrl} alt={name} className="object-cover" />
           <AvatarFallback>{name.substring(0, 2)}</AvatarFallback>
         </Avatar>
         <p className="text-sm font-semibold truncate w-full text-center">

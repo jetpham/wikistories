@@ -13,11 +13,11 @@ import UserAvatar from "./UserAvatar";
 import type { EmblaOptionsType } from "embla-carousel";
 
 export interface AvatarData {
-  id: string;
+  id: number;
   name: string;
   title: string;
-  article: URL;
-  avatarImageLink: URL;
+  article: string;
+  avatarImageLink: string;
 }
 
 interface CarouselOfUserAvatarsProps {
@@ -27,15 +27,15 @@ interface CarouselOfUserAvatarsProps {
 function CarouselOfUserAvatars({ avatars }: CarouselOfUserAvatarsProps) {
   const carouselOptions: EmblaOptionsType = {
     align: "start",
-    slidesToScroll: 1,
+    slidesToScroll: 4,
     containScroll: "trimSnaps",
   };
 
   return (
-    <Carousel opts={carouselOptions} className="w-full">
+    <Carousel opts={carouselOptions} className="p-8">
       <CarouselContent>
         {avatars.map((avatar) => (
-          <CarouselItem key={avatar.id} className="flex-none">
+          <CarouselItem key={avatar.id} className="flex-none w-30 !pl-2 pr-2">
             <UserAvatar
               name={avatar.name}
               imageUrl={avatar.avatarImageLink}

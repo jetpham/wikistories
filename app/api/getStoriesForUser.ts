@@ -7,9 +7,8 @@ This file represents the stories endpoint for users. If you are intereacting wit
  *
  * For a given user, we hit the wikipedia api endpoint and get all of the media sources for that user. Then we map it to just be [{src, alt}, ...] to simplify things. It's a takehome afterall lol.
  */
-export async function GET({ params }: { params: Promise<{ user: string }> }) {
+export async function getStoriesForUser(user: string) {
   try {
-    const { user } = await params;
     const wikiEndpoint = `https://en.wikipedia.org/api/rest_v1/page/media-list/${user}`;
     const response = await fetch(wikiEndpoint, {
       headers: {
@@ -43,7 +42,7 @@ export async function GET({ params }: { params: Promise<{ user: string }> }) {
 
     const mappedItems = data.items.map(
       (item: { srcset: { src: string }[]; caption: { text: string } }) => ({
-        src: new URL("https://" + item.srcset?.[0]?.src) || "",
+        src: "https://" + item.srcset?.[0]?.src || "",
         alt: item.caption?.text || "",
       }),
     );
@@ -65,28 +64,16 @@ export async function GET({ params }: { params: Promise<{ user: string }> }) {
 Adds a an image to a user's story.
 Would probably be called from some kind of "story creation" studio.
 */
-export async function POST() {
-  return new Response(null, {
-    status: 404,
-  });
-}
+// export async function POST()
 
 /**
 Update add a like to a story.
 
 Send from another user, you can send this to add a like to the story. (just one theoretical use)
 */
-export async function PUT() {
-  return new Response(null, {
-    status: 404,
-  });
-}
+// export async function PUT()
 
 /**
 Deletes a story off of a user's list of stories
 */
-export async function DELETE() {
-  return new Response(null, {
-    status: 404,
-  });
-}
+// export async function DELETE()

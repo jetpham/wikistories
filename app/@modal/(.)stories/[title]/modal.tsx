@@ -3,6 +3,7 @@
 import { type ElementRef, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { createPortal } from "react-dom";
+import { X } from "lucide-react";
 
 export function Modal({ children }: { children: React.ReactNode }) {
   const router = useRouter();
@@ -26,7 +27,12 @@ export function Modal({ children }: { children: React.ReactNode }) {
         className="bg-black/70 h-full w-full m-0 p-0 max-w-none max-h-none inset-0 fixed flex items-center justify-center"
       >
         {children}
-        <button onClick={onDismiss} className="close-button" />
+        <button
+          className="absolute top-4 right-4 cursor-pointer "
+          onClick={onDismiss}
+        >
+          <X color="#ffffff" className="size-10" />
+        </button>
       </dialog>
     </div>,
     document.getElementById("modal-root")!

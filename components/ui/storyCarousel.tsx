@@ -19,6 +19,7 @@ type CarouselProps = {
   plugins?: CarouselPlugin;
   orientation?: "horizontal" | "vertical";
   setApi?: (api: CarouselApi) => void;
+  userId: number;
 };
 
 type CarouselContextProps = {
@@ -49,6 +50,7 @@ function Carousel({
   plugins,
   className,
   children,
+  userId,
   ...props
 }: React.ComponentProps<"div"> & CarouselProps) {
   const [carouselRef, api] = useEmblaCarousel(
@@ -68,25 +70,13 @@ function Carousel({
   }, []);
 
   const scrollPrev = React.useCallback(() => {
+    console.log("going prev");
     api?.scrollPrev();
   }, [api]);
 
   const scrollNext = React.useCallback(() => {
     api?.scrollNext();
   }, [api]);
-
-  const handleKeyDown = React.useCallback(
-    (event: React.KeyboardEvent<HTMLDivElement>) => {
-      if (event.key === "ArrowLeft") {
-        event.preventDefault();
-        scrollPrev();
-      } else if (event.key === "ArrowRight") {
-        event.preventDefault();
-        scrollNext();
-      }
-    },
-    [scrollPrev, scrollNext]
-  );
 
   React.useEffect(() => {
     if (!api || !setApi) return;
@@ -116,10 +106,10 @@ function Carousel({
         scrollNext,
         canScrollPrev,
         canScrollNext,
+        userId,
       }}
     >
       <div
-        onKeyDownCapture={handleKeyDown}
         className={cn("relative", className)}
         role="region"
         aria-roledescription="carousel"

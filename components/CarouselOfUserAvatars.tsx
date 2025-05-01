@@ -36,17 +36,13 @@ function CarouselOfUserAvatars({ avatars }: CarouselOfUserAvatarsProps) {
       <CarouselContent>
         {avatars.map((avatar) => (
           <CarouselItem key={avatar.id} className="flex-none w-30 !pl-2 pr-2">
-            <UserAvatar
-              name={avatar.name}
-              imageUrl={avatar.avatarImageLink}
-              title={avatar.title}
-            />
+            <UserAvatar id={avatar.id} />
           </CarouselItem>
         ))}
       </CarouselContent>
       <div className="flex justify-center mt-4 p-4">
-        <CarouselPrevious className="relative static mr-2" />
-        <CarouselNext className="relative static ml-2" />
+        <CarouselPrevious className="relative mr-2" />
+        <CarouselNext className="relative ml-2" />
       </div>
     </Carousel>
   );

@@ -1,5 +1,5 @@
-import { Story } from "@/components/Story";
 import { Modal } from "./modal";
+import { StoryWrapper } from "@/components/StoryWrapper";
 
 export default async function StoryModal({
   params,
@@ -7,9 +7,10 @@ export default async function StoryModal({
   params: Promise<{ title: string }>;
 }) {
   const title = (await params).title;
+
   return (
     <Modal>
-      <Story title={title} />
+      <StoryWrapper title={title} />
     </Modal>
   );
 }

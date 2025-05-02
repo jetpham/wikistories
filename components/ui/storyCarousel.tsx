@@ -8,6 +8,8 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { User } from "@/app/types";
+import { redirect } from "next/navigation";
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
@@ -53,6 +55,9 @@ function Carousel({
   userId,
   ...props
 }: React.ComponentProps<"div"> & CarouselProps) {
+  const [canScrollPrev, setCanScrollPrev] = React.useState(false);
+  const [canScrollNext, setCanScrollNext] = React.useState(false);
+
   const [carouselRef, api] = useEmblaCarousel(
     {
       ...opts,
@@ -60,8 +65,6 @@ function Carousel({
     },
     plugins
   );
-  const [canScrollPrev, setCanScrollPrev] = React.useState(false);
-  const [canScrollNext, setCanScrollNext] = React.useState(false);
 
   const onSelect = React.useCallback((api: CarouselApi) => {
     if (!api) return;
@@ -70,7 +73,6 @@ function Carousel({
   }, []);
 
   const scrollPrev = React.useCallback(() => {
-    console.log("going prev");
     api?.scrollPrev();
   }, [api]);
 
@@ -99,7 +101,7 @@ function Carousel({
       value={{
         carouselRef,
         api: api,
-        opts,
+        opts: { ...opts },
         orientation:
           orientation || (opts?.axis === "y" ? "vertical" : "horizontal"),
         scrollPrev,
@@ -165,9 +167,18 @@ function CarouselPrevious({
   className,
   variant = "outline",
   size = "icon",
+  prevUser = null,
   ...props
-}: React.ComponentProps<typeof Button>) {
+}: React.ComponentProps<typeof Button> & { prevUser?: User | null }) {
   const { orientation, scrollPrev, canScrollPrev } = useCarousel();
+
+  const handleGoPrev = () => {
+    if (!canScrollPrev && prevUser) {
+      redirect(`/stories/${prevUser.title}`);
+    } else {
+      scrollPrev();
+    }
+  };
 
   return (
     <Button
@@ -179,11 +190,11 @@ function CarouselPrevious({
         orientation === "horizontal"
           ? "top-1/2 -left-12 -translate-y-1/2"
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
-        !canScrollPrev && "invisible",
+        !canScrollPrev && !prevUser && "invisible",
         className
       )}
-      disabled={!canScrollPrev}
-      onClick={scrollPrev}
+      disabled={!canScrollPrev && !prevUser}
+      onClick={handleGoPrev}
       {...props}
     >
       <ArrowLeft />
@@ -196,9 +207,28 @@ function CarouselNext({
   className,
   variant = "outline",
   size = "icon",
+  currentUser,
+  nextUser = null,
+  viewStory,
   ...props
-}: React.ComponentProps<typeof Button>) {
+}: React.ComponentProps<typeof Button> & {
+  nextUser: User | null;
+  currentUser: User;
+  viewStory: (userId: number) => void;
+}) {
   const { orientation, scrollNext, canScrollNext } = useCarousel();
+
+  const handleGoNext = () => {
+    if (currentUser.completedStories < currentUser.stories.length) {
+      viewStory(currentUser.id);
+    }
+    if (!canScrollNext && nextUser) {
+      redirect(`/stories/${nextUser.title}`);
+    } else {
+      console.log("Scrolling to next slide");
+      scrollNext();
+    }
+  };
 
   return (
     <Button
@@ -210,11 +240,11 @@ function CarouselNext({
         orientation === "horizontal"
           ? "top-1/2 -right-12 -translate-y-1/2"
           : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
-        !canScrollNext && "invisible",
+        !canScrollNext && !nextUser && "invisible",
         className
       )}
-      disabled={!canScrollNext}
-      onClick={scrollNext}
+      disabled={!canScrollNext && !nextUser}
+      onClick={handleGoNext}
       {...props}
     >
       <ArrowRight />

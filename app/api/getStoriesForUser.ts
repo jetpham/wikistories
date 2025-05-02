@@ -2,6 +2,8 @@
 This file represents the stories endpoint for users. If you are intereacting with the stories of a user, this is the api. I have some documentation for what other endpoints would looks like theoretically.
 */
 
+import { Story } from "../types";
+
 /**
  * Get the images and alt text of their stories given a user name.
  *
@@ -9,10 +11,10 @@ This file represents the stories endpoint for users. If you are intereacting wit
  * I'm also capping images to 5 per juts for simplicity sake
  */
 export async function getStoriesForUser(
-  user: string,
-): Promise<{ src: string; alt: string }[]> {
+  title: string,
+): Promise<Story[]> {
   try {
-    const wikiEndpoint = `https://en.wikipedia.org/api/rest_v1/page/media-list/${user}`;
+    const wikiEndpoint = `https://en.wikipedia.org/api/rest_v1/page/media-list/${title}`;
     const response = await fetch(wikiEndpoint, {
       headers: {
         accept:
@@ -35,10 +37,14 @@ export async function getStoriesForUser(
     }
 
     const mappedItems = data.items.map(
-      (item: { srcset: { src: string }[]; caption: { text: string } }) => ({
-        src: "https://" + item.srcset?.[0]?.src || "",
-        alt: item.caption?.text || "",
-      }),
+      (
+      item: { srcset: { src: string }[]; caption: { text: string } },
+      index: number,
+      ) => ({
+      id: index + 1,
+      src: "https://" + item.srcset?.[0]?.src || "",
+      alt: item.caption?.text || "",
+      } as Story),
     );
 
     return mappedItems.slice(0, 5);

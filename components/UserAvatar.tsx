@@ -4,38 +4,15 @@
 import * as React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
-import { useState } from "react";
-import { UserWithStories } from "./avatar-carousel-wrapper";
+import { User } from "@/app/types";
 
-function UserAvatar({ id }: { id: number }) {
-  const [finished, setFinished] = useState<boolean>(false);
-  const [, setProgress] = useState<number>(0);
-  const [user, setUser] = useState<UserWithStories | null>(null);
-
-  React.useEffect(() => {
-    const storedData = sessionStorage.getItem(String(id));
-    if (storedData) {
-      const parsedUser = JSON.parse(storedData) as UserWithStories;
-      setUser(parsedUser);
-      setFinished(parsedUser.completedStories === parsedUser.totalStories);
-      setProgress(parsedUser.completedStories);
-    }
-  }, [id]);
-
-  if (!user) {
-    return null;
-  }
-
-  const handleStoryClick = () => {
-    console.log(`Navigating to story for ${user.title}`);
-  };
-
+function UserAvatar({ user }: { user: User }) {
   return (
-    <Link href={`/stories/${user.title}`} onClick={handleStoryClick}>
+    <Link href={`/stories/${user.title}`}>
       <div className="flex flex-col items-center ">
-        {!finished ? (
+        {!(user.stories.length == user.completedStories) ? (
           <div className="h-20 w-20 bg-linear-to-tr from-[#833ab4] via-[#fd1d1d] to-[#fcb045] rounded-full flex items-center justify-center">
-            <Avatar className="h-19/20 w-19/20 border-1 border-white">
+            <Avatar className="h-18/20 w-18/20 border-1 border-white">
               <AvatarImage
                 src={user.avatarImageLink}
                 alt={user.name}
@@ -45,8 +22,8 @@ function UserAvatar({ id }: { id: number }) {
             </Avatar>
           </div>
         ) : (
-          <div className="h-20 w-20 bg-[#363636]  rounded-full flex items-center">
-            <Avatar className="h-19/20 w-19/20 border-1 border-white">
+          <div className="h-20 w-20 bg-[#363636] rounded-full flex items-center justify-center">
+            <Avatar className="h-18/20 w-18/20 border-1 border-white">
               <AvatarImage
                 src={user.avatarImageLink}
                 alt={user.name}

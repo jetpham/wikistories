@@ -1,4 +1,5 @@
 "use client";
+import { User } from "@/app/types";
 import {
   Carousel,
   CarouselContent,
@@ -7,59 +8,76 @@ import {
   CarouselPrevious,
 } from "@/components/ui/storyCarousel";
 import Autoplay from "embla-carousel-autoplay";
-import React, { useState } from "react";
-import { UserWithStories } from "./avatar-carousel-wrapper";
+import React, { useEffect } from "react";
 
-export function Story({ title }: { title: string }) {
+export function Story({
+  users,
+  title,
+  viewStory,
+}: {
+  users: User[];
+  title: string;
+  viewStory: (userId: number) => void;
+}) {
   const plugin = React.useRef(
     Autoplay({ delay: 3000, stopOnInteraction: true })
   );
-  const [finished, setFinished] = useState<boolean>(false);
-  const [progress, setProgress] = useState<number>(0);
-  const [user, setUser] = useState<UserWithStories | null>(null);
 
-  React.useEffect(() => {
-    const key = sessionStorage.getItem(title);
-    const storedData = key ? sessionStorage.getItem(key) : null;
-    if (storedData) {
-      const parsedUser = JSON.parse(storedData) as UserWithStories;
-      setUser(parsedUser);
-      setFinished(parsedUser.completedStories === parsedUser.totalStories);
-      setProgress(parsedUser.completedStories);
+  const currentUser = users.find((user) => user.title === title);
+
+  const nextUser = currentUser
+    ? users.find((user) => user.id === currentUser.id + 1)
+    : null;
+  const prevUser = currentUser
+    ? users.find((user) => user.id === currentUser.id - 1)
+    : null;
+
+  useEffect(() => {
+    if (
+      currentUser &&
+      currentUser.completedStories < currentUser.stories.length
+    ) {
+      viewStory(currentUser.id);
     }
-  }, [title]);
+  }, [currentUser, viewStory]);
 
-  if (!user) {
-    return null;
+  if (!currentUser) {
+    return <div>User not found</div>;
   }
 
-  const stories = user.stories;
   return (
     <Carousel
       opts={{
-        align: () => (finished ? 0 : progress),
         duration: 0,
         watchDrag: false,
+        startIndex:
+          currentUser.completedStories === currentUser.stories.length
+            ? 0
+            : currentUser.completedStories - 1,
       }}
       className=" h-4/5 bg-white aspect-9/16 content-center"
-      plugins={[plugin.current]}
+      // plugins={[plugin.current]}
       onMouseEnter={plugin.current.stop}
       onMouseLeave={plugin.current.reset}
-      userId={user.id}
+      userId={currentUser.id}
     >
       <CarouselContent>
-        {stories.map((img, index) => (
+        {currentUser.stories.map((img, index) => (
           <CarouselItem key={index} className="content-center">
             <img
               src={img.src}
               alt={img.alt}
-              className=" max-h-full w-full object-contain"
+              className="max-h-full w-full object-contain"
             />
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious prevUser={prevUser} />
+      <CarouselNext
+        nextUser={nextUser ?? null}
+        currentUser={currentUser}
+        viewStory={viewStory}
+      />
     </Carousel>
   );
 }

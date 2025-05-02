@@ -1,0 +1,671 @@
+[
+  {
+    "id": 1,
+    "name": "Rory McIlroy",
+    "title": "Rory_McIlroy",
+    "article": "https://en.wikipedia.org//wiki/Rory_McIlroy",
+    "avatarImageLink": "https:////upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Rory_McIlroy_watches_drive_flight_%28portrait_orientation%29.jpg/120px-Rory_McIlroy_watches_drive_flight_%28portrait_orientation%29.jpg",
+    "stories": [
+      {
+        "id": 1,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Rory_McIlroy_watches_drive_flight_%28portrait_orientation%29.jpg/640px-Rory_McIlroy_watches_drive_flight_%28portrait_orientation%29.jpg",
+        "alt": ""
+      },
+      {
+        "id": 2,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/1/18/Rory_McIlroy_and_father.jpg/640px-Rory_McIlroy_and_father.jpg",
+        "alt": "Rory and father Gerry McIlroy in May 2013"
+      },
+      {
+        "id": 3,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Rory_McIlroy_practicing_on_the_green_at_the_2010_PGA_Championship.jpg/640px-Rory_McIlroy_practicing_on_the_green_at_the_2010_PGA_Championship.jpg",
+        "alt": "McIlroy during a practice round of the 2010 PGA Championship"
+      },
+      {
+        "id": 4,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/6/61/Rory_McIlroy_at_the_Memorial_Golf_Tournament.jpg/640px-Rory_McIlroy_at_the_Memorial_Golf_Tournament.jpg",
+        "alt": "McIlroy in June 2011 at the Memorial Tournament"
+      },
+      {
+        "id": 5,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/3/31/Rory_McIlroy_2012_U.S._Open_%28cropped%29.jpg/320px-Rory_McIlroy_2012_U.S._Open_%28cropped%29.jpg",
+        "alt": "McIlroy warming up at the 2012 U.S. Open in San Francisco"
+      }
+    ],
+    "completedStories": 0
+  },
+  {
+    "id": 2,
+    "name": "Sinners (2025 film)",
+    "title": "Sinners_(2025_film)",
+    "article": "https://en.wikipedia.org//wiki/Sinners_(2025_film)",
+    "avatarImageLink": "https:////upload.wikimedia.org/wikipedia/commons/thumb/d/d1/TIFF_2019_just_mercy_%281_of_1%29-2_%2848690780886%29_%28cropped%29.jpg/120px-TIFF_2019_just_mercy_%281_of_1%29-2_%2848690780886%29_%28cropped%29.jpg",
+    "stories": [
+      {
+        "id": 1,
+        "src": "https:////upload.wikimedia.org/wikipedia/en/thumb/5/5f/Sinners_%282025_film%29_poster.jpg/250px-Sinners_%282025_film%29_poster.jpg",
+        "alt": ""
+      },
+      {
+        "id": 2,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Ryan_Coogler_by_Gage_Skidmore.jpg/640px-Ryan_Coogler_by_Gage_Skidmore.jpg",
+        "alt": ""
+      },
+      {
+        "id": 3,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Michael_B._Jordan_in_2019.jpg/640px-Michael_B._Jordan_in_2019.jpg",
+        "alt": ""
+      },
+      {
+        "id": 4,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Ludwig_G%C3%B6ransson_2018_Interview_%28cropped%29.jpg/640px-Ludwig_G%C3%B6ransson_2018_Interview_%28cropped%29.jpg",
+        "alt": "Composer Ludwig Göransson said his score for Sinners reflected his own musical journey."
+      }
+    ],
+    "completedStories": 0
+  },
+  {
+    "id": 3,
+    "name": "Justin Rose",
+    "title": "Justin_Rose",
+    "article": "https://en.wikipedia.org//wiki/Justin_Rose",
+    "avatarImageLink": "https:////upload.wikimedia.org/wikipedia/commons/thumb/8/81/Justin_Rose.jpg/120px-Justin_Rose.jpg",
+    "stories": [
+      {
+        "id": 1,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/8/81/Justin_Rose.jpg/320px-Justin_Rose.jpg",
+        "alt": ""
+      },
+      {
+        "id": 2,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/8/8c/JustinRoseATTNational2.jpg/640px-JustinRoseATTNational2.jpg",
+        "alt": "Rose at the 2007 AT&T National"
+      },
+      {
+        "id": 3,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Justin_Rose_Dutch_Open_2008.JPG/640px-Justin_Rose_Dutch_Open_2008.JPG",
+        "alt": "Rose at the 2008 KLM Open"
+      },
+      {
+        "id": 4,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Justin_Rose_at_2015_PGA_Championship.jpg/640px-Justin_Rose_at_2015_PGA_Championship.jpg",
+        "alt": "Rose at the 2015 PGA Championship "
+      },
+      {
+        "id": 5,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/1/12/2018_US_Open_golfers_08.jpg/640px-2018_US_Open_golfers_08.jpg",
+        "alt": "Rose with Brooks Koepka at the 2018 U.S. Open."
+      }
+    ],
+    "completedStories": 0
+  },
+  {
+    "id": 4,
+    "name": "Jaat (film)",
+    "title": "Jaat_(film)",
+    "article": "https://en.wikipedia.org//wiki/Jaat_(film)",
+    "avatarImageLink": "https:////upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Regina_Cassandra_during_screening_of_jaat.jpg/120px-Regina_Cassandra_during_screening_of_jaat.jpg",
+    "stories": [
+      {
+        "id": 1,
+        "src": "https:////upload.wikimedia.org/wikipedia/en/thumb/0/0b/Jaat_film_poster.jpg/250px-Jaat_film_poster.jpg",
+        "alt": ""
+      },
+      {
+        "id": 2,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Sunny_Paaji_2024.jpg/250px-Sunny_Paaji_2024.jpg",
+        "alt": ""
+      },
+      {
+        "id": 3,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Randeep_Hooda_BIG_Star_Entertainment_Awards.jpg/320px-Randeep_Hooda_BIG_Star_Entertainment_Awards.jpg",
+        "alt": ""
+      },
+      {
+        "id": 4,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Regina_Cassandra_during_screening_of_jaat_%28cropped%29.jpg/320px-Regina_Cassandra_during_screening_of_jaat_%28cropped%29.jpg",
+        "alt": ""
+      }
+    ],
+    "completedStories": 0
+  },
+  {
+    "id": 5,
+    "name": "ChatGPT",
+    "title": "ChatGPT",
+    "article": "https://en.wikipedia.org//wiki/ChatGPT",
+    "avatarImageLink": "https:////upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Hand_holding_smartphone_with_ChatGPT_and_OpenAI_text_%2852917312010%29.jpg/120px-Hand_holding_smartphone_with_ChatGPT_and_OpenAI_text_%2852917312010%29.jpg",
+    "stories": [
+      {
+        "id": 1,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/e/ef/ChatGPT-Logo.svg/320px-ChatGPT-Logo.svg.png",
+        "alt": ""
+      },
+      {
+        "id": 2,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/6/64/Dall-e_3_%28jan_%2724%29_artificial_intelligence_icon.png/640px-Dall-e_3_%28jan_%2724%29_artificial_intelligence_icon.png",
+        "alt": ""
+      },
+      {
+        "id": 3,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Chatgpt-screenshot.png/640px-Chatgpt-screenshot.png",
+        "alt": "A screenshot of ChatGPT in Mozilla Firefox on ZorinOS"
+      },
+      {
+        "id": 4,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/3/3a/ChatGPT_hallucination.png/640px-ChatGPT_hallucination.png",
+        "alt": "When prompted to \"summarize an article\" with a fake URL that contains meaningful keywords, even with no Internet connection, the chatbot generates a response that seems valid at first glance. It guesses the content from the last portion of the fake URL \"chatgpt-prompts-to-avoid-content-filters.html\"."
+      },
+      {
+        "id": 5,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/4/47/A_pictorial_interpretation_of_the_Wikipedia_encyclopedia%2C_created_by_ChatGPT.jpg/640px-A_pictorial_interpretation_of_the_Wikipedia_encyclopedia%2C_created_by_ChatGPT.jpg",
+        "alt": "Screenshot of ChatGPT showing a generated image representing the online encyclopedia Wikipedia"
+      }
+    ],
+    "completedStories": 0
+  },
+  {
+    "id": 6,
+    "name": "WrestleMania 41",
+    "title": "WrestleMania_41",
+    "article": "https://en.wikipedia.org//wiki/WrestleMania_41",
+    "avatarImageLink": "https:////upload.wikimedia.org/wikipedia/commons/thumb/6/65/Seth_Rollins_2024_%28cropped%29.jpg/120px-Seth_Rollins_2024_%28cropped%29.jpg",
+    "stories": [
+      {
+        "id": 1,
+        "src": "https:////upload.wikimedia.org/wikipedia/en/thumb/6/6f/WrestleMania_41_poster.jpg/250px-WrestleMania_41_poster.jpg",
+        "alt": ""
+      },
+      {
+        "id": 2,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/2/23/Allegiant_Stadium_%28cropped%29.jpg/640px-Allegiant_Stadium_%28cropped%29.jpg",
+        "alt": "The event was held at Allegiant Stadium in Paradise, Nevada."
+      },
+      {
+        "id": 3,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/1/16/WrestleMania_41_%282025%29_stage.jpg/640px-WrestleMania_41_%282025%29_stage.jpg",
+        "alt": "Allegiant Stadium during WrestleMania 41."
+      },
+      {
+        "id": 4,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/a/a0/John_Cena_RR25_%28cropped%29.jpg/640px-John_Cena_RR25_%28cropped%29.jpg",
+        "alt": ""
+      },
+      {
+        "id": 5,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Cody_Rhodes_RR25.jpg/640px-Cody_Rhodes_RR25.jpg",
+        "alt": ""
+      }
+    ],
+    "completedStories": 0
+  },
+  {
+    "id": 7,
+    "name": "Deaths in 2025",
+    "title": "Deaths_in_2025",
+    "article": "https://en.wikipedia.org//wiki/Deaths_in_2025",
+    "avatarImageLink": "https:////upload.wikimedia.org/wikipedia/commons/thumb/e/e0/An_heroic_figure_of_Death_with_three_female_allegories._Pen_Wellcome_V0042144.jpg/120px-An_heroic_figure_of_Death_with_three_female_allegories._Pen_Wellcome_V0042144.jpg",
+    "stories": [],
+    "completedStories": 0
+  },
+  {
+    "id": 8,
+    "name": "Deportation of Kilmar Abrego Garcia",
+    "title": "Deportation_of_Kilmar_Abrego_Garcia",
+    "article": "https://en.wikipedia.org//wiki/Deportation_of_Kilmar_Abrego_Garcia",
+    "avatarImageLink": "https:////upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Kilmar_Armando_Abrego_Garcia_ICE_document_%28cropped%29.jpg/120px-Kilmar_Armando_Abrego_Garcia_ICE_document_%28cropped%29.jpg",
+    "stories": [
+      {
+        "id": 1,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Kilmar_%C3%81brego_Garc%C3%ADa.jpg/320px-Kilmar_%C3%81brego_Garc%C3%ADa.jpg",
+        "alt": ""
+      },
+      {
+        "id": 2,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/b/bf/Kilmar_Armando_Abrego_Garcia_ICE_document_%28cropped%29.jpg",
+        "alt": "Abrego Garcia, pictured in an Immigration and Customs Enforcement document dated 2019[2]"
+      },
+      {
+        "id": 3,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/1/18/DHS_Secretary_Kristi_Noem_Travels_to_El_Salvador_%2854412500647%29.jpg/640px-DHS_Secretary_Kristi_Noem_Travels_to_El_Salvador_%2854412500647%29.jpg",
+        "alt": "Salvadoran justice minister Gustavo Villatoro (left) and U.S. homeland security secretary Kristi Noem (right) observing inmates inside a cell in CECOT, March 2025"
+      },
+      {
+        "id": 4,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/4/47/Aerial_view_of_CECOT.png/640px-Aerial_view_of_CECOT.png",
+        "alt": "CECOT, the maximum security prison in El Salvador where Abrego Garcia was sent by the U.S. government"
+      },
+      {
+        "id": 5,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/1/1a/DistrictCourtMarylandSeal.png",
+        "alt": ""
+      }
+    ],
+    "completedStories": 0
+  },
+  {
+    "id": 9,
+    "name": "A Minecraft Movie",
+    "title": "A_Minecraft_Movie",
+    "article": "https://en.wikipedia.org//wiki/A_Minecraft_Movie",
+    "avatarImageLink": "https:////upload.wikimedia.org/wikipedia/commons/thumb/c/c3/A_Minecraft_Movie_waarschuwing_%282025%29.jpg/120px-A_Minecraft_Movie_waarschuwing_%282025%29.jpg",
+    "stories": [
+      {
+        "id": 1,
+        "src": "https:////upload.wikimedia.org/wikipedia/en/thumb/6/66/A_Minecraft_Movie_poster.jpg/250px-A_Minecraft_Movie_poster.jpg",
+        "alt": ""
+      },
+      {
+        "id": 2,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/9/92/TenaciousDO2160623_%2838_of_62%29_Jack_Black.jpg/640px-TenaciousDO2160623_%2838_of_62%29_Jack_Black.jpg",
+        "alt": ""
+      },
+      {
+        "id": 3,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Jason_Momoa_in_2018.jpg/640px-Jason_Momoa_in_2018.jpg",
+        "alt": ""
+      },
+      {
+        "id": 4,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Jared_Hess_%28cropped%29.jpg/320px-Jared_Hess_%28cropped%29.jpg",
+        "alt": "In 2022, Jared Hess came on board to direct the film, which had been in development since 2014."
+      },
+      {
+        "id": 5,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/9/94/McDonald%27s_fries_container_%28Special_Edition_for_the_Minecraft_Movie%29.jpg/640px-McDonald%27s_fries_container_%28Special_Edition_for_the_Minecraft_Movie%29.jpg",
+        "alt": "A special-edition A Minecraft Movie, McDonald's fries container, as sold in India"
+      }
+    ],
+    "completedStories": 0
+  },
+  {
+    "id": 10,
+    "name": "List of Black Mirror episodes",
+    "title": "List_of_Black_Mirror_episodes",
+    "article": "https://en.wikipedia.org//wiki/List_of_Black_Mirror_episodes",
+    "avatarImageLink": "https:////upload.wikimedia.org/wikipedia/commons/thumb/d/db/Black_Mirror_logo.svg/120px-Black_Mirror_logo.svg.png",
+    "stories": [
+      {
+        "id": 1,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/0/08/Charlie_Brooker.jpg/640px-Charlie_Brooker.jpg",
+        "alt": "Charlie Brooker, creator of Black Mirror"
+      }
+    ],
+    "completedStories": 0
+  },
+  {
+    "id": 11,
+    "name": "Natalia Grace",
+    "title": "Natalia_Grace",
+    "article": "https://en.wikipedia.org//wiki/Natalia_Grace",
+    "avatarImageLink": "https:////upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Natalia_Grace_HBO_Max.jpg/120px-Natalia_Grace_HBO_Max.jpg",
+    "stories": [
+      {
+        "id": 1,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Natalia_Grace_HBO_Max.jpg/640px-Natalia_Grace_HBO_Max.jpg",
+        "alt": ""
+      }
+    ],
+    "completedStories": 0
+  },
+  {
+    "id": 12,
+    "name": "Good Friday",
+    "title": "Good_Friday",
+    "article": "https://en.wikipedia.org//wiki/Good_Friday",
+    "avatarImageLink": "https:////upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Station_of_the_Cross_at_Bom_Jesus_%2811%29.JPG/120px-Station_of_the_Cross_at_Bom_Jesus_%2811%29.JPG",
+    "stories": [
+      {
+        "id": 1,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Cristo_crucificado.jpg/640px-Cristo_crucificado.jpg",
+        "alt": ""
+      },
+      {
+        "id": 2,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Gustave_Dor%C3%A9_-_The_Holy_Bible_-_Plate_CXLI%2C_The_Judas_Kiss.jpg/640px-Gustave_Dor%C3%A9_-_The_Holy_Bible_-_Plate_CXLI%2C_The_Judas_Kiss.jpg",
+        "alt": "The Judas Kiss by Gustave Doré, 1866"
+      },
+      {
+        "id": 3,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Caravaggio_-_La_Deposizione_di_Cristo.jpg/320px-Caravaggio_-_La_Deposizione_di_Cristo.jpg",
+        "alt": ""
+      },
+      {
+        "id": 4,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/d/de/Ecce_homo_by_Antonio_Ciseri_%281%29.jpg/640px-Ecce_homo_by_Antonio_Ciseri_%281%29.jpg",
+        "alt": "Antonio Ciseri's depiction of Ecce Homo with Jesus and Pontius Pilate, 19th century"
+      },
+      {
+        "id": 5,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Crucifixion_by_Theophanes_the_Cretan.jpg/320px-Crucifixion_by_Theophanes_the_Cretan.jpg",
+        "alt": "Icon of the Crucifixion, 16th century, by Theophanes the Cretan (Stavronikita Monastery, Mount Athos)"
+      }
+    ],
+    "completedStories": 0
+  },
+  {
+    "id": 13,
+    "name": "Grand Slam (golf)",
+    "title": "Grand_Slam_(golf)",
+    "article": "https://en.wikipedia.org//wiki/Grand_Slam_(golf)",
+    "avatarImageLink": "https:////upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Golfing_against_each_other_%28Unsplash%29.jpg/120px-Golfing_against_each_other_%28Unsplash%29.jpg",
+    "stories": [
+      {
+        "id": 1,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/7/75/BobbyJonesAge14.jpg/320px-BobbyJonesAge14.jpg",
+        "alt": "Bobby Jones, who won the pre-Masters era Career Grand Slam in 1930, is the only golfer to win four majors in the same year."
+      },
+      {
+        "id": 2,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/7/7f/JackNicklaus.cropped.jpg/640px-JackNicklaus.cropped.jpg",
+        "alt": "Jack Nicklaus won the Career Grand Slam three times."
+      },
+      {
+        "id": 3,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Tiger_Woods_drives_by_Allison.jpg/640px-Tiger_Woods_drives_by_Allison.jpg",
+        "alt": "Tiger Woods won the Career Grand Slam three times."
+      },
+      {
+        "id": 4,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/5/52/Gene_Sarazen.JPG/250px-Gene_Sarazen.JPG",
+        "alt": "Gene Sarazen won a Career Grand Slam."
+      },
+      {
+        "id": 5,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/1/12/Ben_Hogan_NYWTS.jpg/640px-Ben_Hogan_NYWTS.jpg",
+        "alt": "Ben Hogan won a Career Grand Slam."
+      }
+    ],
+    "completedStories": 0
+  },
+  {
+    "id": 14,
+    "name": "Nayib Bukele",
+    "title": "Nayib_Bukele",
+    "article": "https://en.wikipedia.org//wiki/Nayib_Bukele",
+    "avatarImageLink": "https:////upload.wikimedia.org/wikipedia/commons/thumb/a/a6/The_White_House_-_54452215186.jpg/120px-The_White_House_-_54452215186.jpg",
+    "stories": [
+      {
+        "id": 1,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Presidente_Nayib_Bukele_%28cropped%29.jpg/640px-Presidente_Nayib_Bukele_%28cropped%29.jpg",
+        "alt": ""
+      },
+      {
+        "id": 2,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Presidente_Bukele_%28cropped%29.jpg/640px-Presidente_Bukele_%28cropped%29.jpg",
+        "alt": ""
+      },
+      {
+        "id": 3,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Seal_of_the_President_of_El_Salvador.svg/320px-Seal_of_the_President_of_El_Salvador.svg.png",
+        "alt": ""
+      },
+      {
+        "id": 4,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Debut_de_la_Compa%C3%B1ia_Infantil_de_Teatro_La_Colmenita_de_El_Salvador._%2824563050202%29.jpg/640px-Debut_de_la_Compa%C3%B1ia_Infantil_de_Teatro_La_Colmenita_de_El_Salvador._%2824563050202%29.jpg",
+        "alt": "Bukele at the opening of the La Colmenita children's theater, January 2016"
+      },
+      {
+        "id": 5,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/3/36/Carmena_insta_al_municipalismo_iberoamericano_a_unirse_para_construir_ciudades_de_paz_y_prosperidad_01.jpg/640px-Carmena_insta_al_municipalismo_iberoamericano_a_unirse_para_construir_ciudades_de_paz_y_prosperidad_01.jpg",
+        "alt": "At the 18th summit of the Union of Ibero-American Capital Cities, April 2018"
+      }
+    ],
+    "completedStories": 0
+  },
+  {
+    "id": 15,
+    "name": "Good Bad Ugly",
+    "title": "Good_Bad_Ugly",
+    "article": "https://en.wikipedia.org//wiki/Good_Bad_Ugly",
+    "avatarImageLink": "https:////upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Night_Of_Laughter_Detroit_4.jpg/120px-Night_Of_Laughter_Detroit_4.jpg",
+    "stories": [
+      {
+        "id": 1,
+        "src": "https:////upload.wikimedia.org/wikipedia/en/8/83/Good_Bad_Ugly_poster.jpg",
+        "alt": ""
+      }
+    ],
+    "completedStories": 0
+  },
+  {
+    "id": 16,
+    "name": "Black Mirror",
+    "title": "Black_Mirror",
+    "article": "https://en.wikipedia.org//wiki/Black_Mirror",
+    "avatarImageLink": "https:////upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pig_%28Sus_scrofa_domesticus%29_-_FrogHollow_Farm_Sanctuary_2019-10-26_%2807%29.jpg/120px-Pig_%28Sus_scrofa_domesticus%29_-_FrogHollow_Farm_Sanctuary_2019-10-26_%2807%29.jpg",
+    "stories": [
+      {
+        "id": 1,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Black_Mirror_%28British_TV_series%29_logo.svg/320px-Black_Mirror_%28British_TV_series%29_logo.svg.png",
+        "alt": ""
+      },
+      {
+        "id": 2,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/3/36/Irma_Thomas_WWOZ_Oct_2011_B.JPG/640px-Irma_Thomas_WWOZ_Oct_2011_B.JPG",
+        "alt": "Irma Thomas, whose 1964 song \"Anyone Who Knows What Love Is (Will Understand)\" recurs throughout Black Mirror"
+      },
+      {
+        "id": 3,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/d/d1/White_Bear_Black_Mirror.svg/250px-White_Bear_Black_Mirror.svg.png",
+        "alt": "A glyph recurring throughout the series, designed by Brooker and first used in \"White Bear\"[46]: 84 "
+      },
+      {
+        "id": 4,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/0/08/Charlie_Brooker.jpg/640px-Charlie_Brooker.jpg",
+        "alt": "Charlie Brooker wrote the majority of episodes."
+      },
+      {
+        "id": 5,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Rory_Kinnear_2012_%28cropped%29.jpg/640px-Rory_Kinnear_2012_%28cropped%29.jpg",
+        "alt": "Rory Kinnear starred as Prime Minister Michael Callow in the first episode, \"The National Anthem\"."
+      }
+    ],
+    "completedStories": 0
+  },
+  {
+    "id": 17,
+    "name": "The Last of Us (TV series)",
+    "title": "The_Last_of_Us_(TV_series)",
+    "article": "https://en.wikipedia.org//wiki/The_Last_of_Us_(TV_series)",
+    "avatarImageLink": "https:////upload.wikimedia.org/wikipedia/commons/thumb/4/44/The_Last_of_Us-_Part_II.png/120px-The_Last_of_Us-_Part_II.png",
+    "stories": [
+      {
+        "id": 1,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/4/47/The_Last_of_Us_logo.svg/320px-The_Last_of_Us_logo.svg.png",
+        "alt": ""
+      },
+      {
+        "id": 2,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Pedro_Pascal_at_SXSW_2025_01_%28cropped%29.jpg/640px-Pedro_Pascal_at_SXSW_2025_01_%28cropped%29.jpg",
+        "alt": ""
+      },
+      {
+        "id": 3,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Bella_Ramsey%2C_actor%2C_at_SXSW_2025_03_%28cropped%29.jpg/640px-Bella_Ramsey%2C_actor%2C_at_SXSW_2025_03_%28cropped%29.jpg",
+        "alt": ""
+      },
+      {
+        "id": 4,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Craig_Mazin_2024_Emmys_01_%28further_cropped%29.png/320px-Craig_Mazin_2024_Emmys_01_%28further_cropped%29.png",
+        "alt": ""
+      },
+      {
+        "id": 5,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Neil_Druckmann_2024_Emmys_01_%28further_cropped%29.png/320px-Neil_Druckmann_2024_Emmys_01_%28further_cropped%29.png",
+        "alt": ""
+      }
+    ],
+    "completedStories": 0
+  },
+  {
+    "id": 19,
+    "name": "Bryson DeChambeau",
+    "title": "Bryson_DeChambeau",
+    "article": "https://en.wikipedia.org//wiki/Bryson_DeChambeau",
+    "avatarImageLink": "https:////upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Bryson_DeChambeau.jpg/120px-Bryson_DeChambeau.jpg",
+    "stories": [
+      {
+        "id": 1,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Bryson_DeChambeau.jpg/640px-Bryson_DeChambeau.jpg",
+        "alt": ""
+      },
+      {
+        "id": 2,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/a/ae/PGA_BMW_Championship_-_51413431919.jpg/640px-PGA_BMW_Championship_-_51413431919.jpg",
+        "alt": "DeChambeau at the BMW Championship in 2021"
+      }
+    ],
+    "completedStories": 0
+  },
+  {
+    "id": 20,
+    "name": "List of Masters Tournament champions",
+    "title": "List_of_Masters_Tournament_champions",
+    "article": "https://en.wikipedia.org//wiki/List_of_Masters_Tournament_champions",
+    "avatarImageLink": "https:////upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Wilson_golfclubs.jpg/120px-Wilson_golfclubs.jpg",
+    "stories": [
+      {
+        "id": 1,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/7/7f/JackNicklaus.cropped.jpg/640px-JackNicklaus.cropped.jpg",
+        "alt": "Jack Nicklaus, holding a record of six Masters victories in 1963, 1965, 1966, 1972, 1975, and 1986, is one of three golfers to successfully defend his title.  He is also one of five champions to win wire-to-wire, in 1972."
+      },
+      {
+        "id": 2,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/d/d8/YN3ArnoldPalmer.jpg/320px-YN3ArnoldPalmer.jpg",
+        "alt": "Arnold Palmer, four-time Masters Champion 1958, 1960, 1962, and 1964.  He is one of five champions to win wire-to-wire with his victory in 1960."
+      },
+      {
+        "id": 3,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Woods_on_the_Green.jpg/640px-Woods_on_the_Green.jpg",
+        "alt": "Tiger Woods, five-time Masters Champion in 1997, 2001, 2002, 2005, and 2019. Tiger is one of three golfers to successfully defend his title"
+      },
+      {
+        "id": 4,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Sam_Snead_1967.JPG/640px-Sam_Snead_1967.JPG",
+        "alt": "Sam Snead, three-time Masters Champion in 1949, 1952, 1954"
+      },
+      {
+        "id": 5,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/e/e5/All_Black.jpg/640px-All_Black.jpg",
+        "alt": "Gary Player, three-time Masters Champion in 1961, 1974, and 1978, and the first non-American to win the tournament."
+      }
+    ],
+    "completedStories": 0
+  },
+  {
+    "id": 21,
+    "name": "Tiger Woods",
+    "title": "Tiger_Woods",
+    "article": "https://en.wikipedia.org//wiki/Tiger_Woods",
+    "avatarImageLink": "https:////upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Military_Families_share_golf_memories_at_Tiger_Woods_tournament_090702_%285009630596%29.jpg/120px-Military_Families_share_golf_memories_at_Tiger_Woods_tournament_090702_%285009630596%29.jpg",
+    "stories": [
+      {
+        "id": 1,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/a/a7/President_Donald_Trump_hosts_a_reception_honoring_Black_History_Month_%2854341713089%29_%28cropped%29.jpg/640px-President_Donald_Trump_hosts_a_reception_honoring_Black_History_Month_%2854341713089%29_%28cropped%29.jpg",
+        "alt": ""
+      },
+      {
+        "id": 2,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Tiger_and_Earl_Woods_Fort_Bragg_2004.jpg/640px-Tiger_and_Earl_Woods_Fort_Bragg_2004.jpg",
+        "alt": "Woods and his father Earl at Fort Bragg, North Carolina, in 2004"
+      },
+      {
+        "id": 3,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/e/ea/TigerWoods1997.jpg/640px-TigerWoods1997.jpg",
+        "alt": "Woods in 1997"
+      },
+      {
+        "id": 4,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/a/a3/TigerWoods2004RyderCup1.jpg/640px-TigerWoods2004RyderCup1.jpg",
+        "alt": "Woods at the 2004 Ryder Cup"
+      },
+      {
+        "id": 5,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Tiger_Woods_Masters_2006.jpg/640px-Tiger_Woods_Masters_2006.jpg",
+        "alt": "Woods at the 2006 Masters"
+      }
+    ],
+    "completedStories": 0
+  },
+  {
+    "id": 22,
+    "name": "Kyren Lacy",
+    "title": "Kyren_Lacy",
+    "article": "https://en.wikipedia.org//wiki/Kyren_Lacy",
+    "avatarImageLink": "https:////upload.wikimedia.org/wikipedia/commons/thumb/4/48/Kyren_Lacy_2023_%28cropped%29.jpg/120px-Kyren_Lacy_2023_%28cropped%29.jpg",
+    "stories": [
+      {
+        "id": 1,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/4/48/Kyren_Lacy_2023_%28cropped%29.jpg/640px-Kyren_Lacy_2023_%28cropped%29.jpg",
+        "alt": ""
+      }
+    ],
+    "completedStories": 0
+  },
+  {
+    "id": 23,
+    "name": "Katy Perry",
+    "title": "Katy_Perry",
+    "article": "https://en.wikipedia.org//wiki/Katy_Perry",
+    "avatarImageLink": "https:////upload.wikimedia.org/wikipedia/commons/thumb/7/74/KatyPerryWestminst111224_%2816_of_95%29_%2854206735323%29_%28cropped%29.jpg/120px-KatyPerryWestminst111224_%2816_of_95%29_%2854206735323%29_%28cropped%29.jpg",
+    "stories": [
+      {
+        "id": 1,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/e/ef/KatyPerryWestminst111224_%2881_of_95%29_%2854206733094%29_%28cropped_2%29.jpg/640px-KatyPerryWestminst111224_%2881_of_95%29_%2854206733094%29_%28cropped_2%29.jpg",
+        "alt": ""
+      },
+      {
+        "id": 2,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/3/31/Katy_Perry%27s_signature.svg/320px-Katy_Perry%27s_signature.svg.png",
+        "alt": ""
+      },
+      {
+        "id": 3,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/7/76/Katy_Perry_performing.jpg/640px-Katy_Perry_performing.jpg",
+        "alt": "Perry was part of the 2008 Warped Tour lineup."
+      },
+      {
+        "id": 4,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Katy_Perry_-_Part_Of_Me_Australian_Premiere_-_June_2012_%283%29.jpg/640px-Katy_Perry_-_Part_Of_Me_Australian_Premiere_-_June_2012_%283%29.jpg",
+        "alt": "Perry attending the Sydney premiere for her 2012 documentary Katy Perry: Part of Me, which grossed $32.7 million"
+      },
+      {
+        "id": 5,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Katy_Perry_-_The_Prismatic_%28Sunrise%29_01_%28cropped%29.jpg/640px-Katy_Perry_-_The_Prismatic_%28Sunrise%29_01_%28cropped%29.jpg",
+        "alt": "Perry performing during the Prismatic World Tour in July 2014"
+      }
+    ],
+    "completedStories": 0
+  },
+  {
+    "id": 24,
+    "name": "Paddy Pimblett",
+    "title": "Paddy_Pimblett",
+    "article": "https://en.wikipedia.org//wiki/Paddy_Pimblett",
+    "avatarImageLink": "https:////upload.wikimedia.org/wikipedia/commons/thumb/0/05/UFC_Star_Paddy_The_Baddy_Pimblett_tells_his_story.jpg/120px-UFC_Star_Paddy_The_Baddy_Pimblett_tells_his_story.jpg",
+    "stories": [
+      {
+        "id": 1,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/d/d1/UFC_Star_Paddy_The_Baddy_Pimblett_tells_his_story_%28cropped%29.jpg/640px-UFC_Star_Paddy_The_Baddy_Pimblett_tells_his_story_%28cropped%29.jpg",
+        "alt": ""
+      }
+    ],
+    "completedStories": 0
+  },
+  {
+    "id": 25,
+    "name": "Lauren Sánchez",
+    "title": "Lauren_S%C3%A1nchez",
+    "article": "https://en.wikipedia.org//wiki/Lauren_S%C3%A1nchez",
+    "avatarImageLink": "https:////upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Lauren_S%C3%A1nchez_in_2023.jpg/120px-Lauren_S%C3%A1nchez_in_2023.jpg",
+    "stories": [
+      {
+        "id": 1,
+        "src": "https:////upload.wikimedia.org/wikipedia/commons/thumb/7/75/Lauren_Sanchez_Headshot.jpg/640px-Lauren_Sanchez_Headshot.jpg",
+        "alt": ""
+      }
+    ],
+    "completedStories": 0
+  }
+]

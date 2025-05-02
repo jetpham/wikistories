@@ -1,6 +1,5 @@
-import Image from "next/image";
-import { AvatarData } from "./CarouselOfUserAvatars";
+import { User } from "@/app/types";
 
-export async function StoryPreview(user: AvatarData) {
-  return <Image src={user.avatarImageLink} alt={"A picture of " + user.name} />;
+export async function StoryPreview({ user }: { user: User }) {
+  return <p>{user.title}</p>;
 }

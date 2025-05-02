@@ -1,9 +1,9 @@
-import { AvatarData } from "@/components/CarouselOfUserAvatars";
-import { getUsers } from "./api/getUsers";
-import AvatarCarouselWrapper from "@/components/avatar-carousel-wrapper";
+"use client";
+import CarouselOfUserAvatars from "@/components/CarouselOfUserAvatars";
+import { useUsersStore } from "@/components/UsersStoreProvider";
 
-export default async function Home() {
-  const avatars: AvatarData[] = await getUsers();
+export default function Home() {
+  const { users } = useUsersStore((state) => state);
 
-  return <AvatarCarouselWrapper avatars={avatars} />;
+  return <CarouselOfUserAvatars users={users} />;
 }

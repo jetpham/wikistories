@@ -11,20 +11,9 @@ import {
 } from "@/components/ui/carousel";
 import UserAvatar from "./UserAvatar";
 import type { EmblaOptionsType } from "embla-carousel";
+import { User } from "@/app/types";
 
-export interface AvatarData {
-  id: number;
-  name: string;
-  title: string;
-  article: string;
-  avatarImageLink: string;
-}
-
-interface CarouselOfUserAvatarsProps {
-  avatars: AvatarData[];
-}
-
-function CarouselOfUserAvatars({ avatars }: CarouselOfUserAvatarsProps) {
+function CarouselOfUserAvatars({ users }: { users: User[] }) {
   const carouselOptions: EmblaOptionsType = {
     align: "start",
     slidesToScroll: 4,
@@ -34,9 +23,9 @@ function CarouselOfUserAvatars({ avatars }: CarouselOfUserAvatarsProps) {
   return (
     <Carousel opts={carouselOptions} className="p-8">
       <CarouselContent>
-        {avatars.map((avatar) => (
-          <CarouselItem key={avatar.id} className="flex-none w-30 !pl-2 pr-2">
-            <UserAvatar id={avatar.id} />
+        {users.map((user) => (
+          <CarouselItem key={user.id} className="flex-none w-30 !pl-2 pr-2">
+            <UserAvatar user={user} />
           </CarouselItem>
         ))}
       </CarouselContent>

@@ -1,5 +1,7 @@
-import { AvatarData } from "@/components/CarouselOfUserAvatars";
 import { load } from "cheerio";
+import { getStoriesForUser } from "./getStoriesForUser";
+import { RawUser, User } from "../types";
+import { readFile } from "fs/promises";
 
 /*
 This file overall represent the users api endpoint. It would represent the friends of the current user, but since there is no "current user" and all users are the same from server's perspective, we'll just return the same list of users. You'll see docs for what each funciton would do if it was a fully fledged backend.
@@ -12,21 +14,37 @@ This file overall represent the users api endpoint. It would represent the frien
  * This could be replaced in the future with a database request for the friends of the curren't user
  */
 
-export async function getUsers(): Promise<AvatarData[]> {
+export async function getUsers(): Promise<User[]> {
   const url = "https://en.wikipedia.org/wiki/Wikipedia:Top_25_Report";
 
-  const response = await fetch(url);
+  let response;
+  try {
+    response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+  } catch (error) {
+    console.warn("Failed to fetch data from the URL, loading offline data:", error);
+    const offlineDataString = await readFile( "offlineData.json", "utf-8");
+    const offlineData: RawUser[] = JSON.parse(offlineDataString);
+    return offlineData.map((rawUser: RawUser) => ({
+      ...rawUser,
+      completedStories: 0,
+    }));
+  }
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
 
   const html = await response.text();
-  const $ = load(html);
-  const data: AvatarData[] = [];
 
-  $("table.wikitable tr").each((_, element) => {
-    if (_ === 0) {
-      return;
+  const $ = load(html);
+  const data: RawUser[] = [];
+
+  const rows = $("table.wikitable tr").toArray();
+  for (const [index, element] of rows.entries()) {
+    if (index === 0) {
+      continue;
     }
 
     const cells = $(element).find("td");
@@ -35,22 +53,31 @@ export async function getUsers(): Promise<AvatarData[]> {
       const link = $(cells.eq(1)).find("a");
       const name = link.text().trim();
       const title = link.attr("href");
-      const article = "https://en.wikipedia.org/wiki/" + title;
+      const article = "https://en.wikipedia.org/" + title;
       const img = $(cells.eq(4)).find("img").attr("src");
-
+      
       if (title && img) {
+        const splitTitle = title.split("/wiki/")[1];
+        const stories = await getStoriesForUser(splitTitle);
+
         data.push({
           id: parseInt(id),
           name,
-          title: title.split("/wiki/")[1],
+          title: splitTitle,
           article: article,
           avatarImageLink: "https://" + img,
-        });
+          stories: stories,
+        } as RawUser);
       }
     }
-  });
+  }
+  const users = data.map((rawUser) => ({
+    ...rawUser,
+    completedStories: 0,
+  }))
 
-  return data;
+
+  return users
 }
 
 /**

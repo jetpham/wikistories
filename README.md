@@ -1,4 +1,4 @@
-# Chroma Takehome
+# WikiStories
 
 ## Theoretical REST endpoints
 

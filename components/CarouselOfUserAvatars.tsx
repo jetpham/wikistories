@@ -9,9 +9,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import UserAvatar from "./UserAvatar";
 import type { EmblaOptionsType } from "embla-carousel";
 import { User } from "@/app/types";
+import { UserAvatar } from "./UserAvatar";
 
 function CarouselOfUserAvatars({ users }: { users: User[] }) {
   const carouselOptions: EmblaOptionsType = {

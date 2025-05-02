@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Chroma Takehome",
+  title: "WikiStories",
   description: "An instagram stories clone",
 };
 

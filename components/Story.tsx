@@ -8,7 +8,10 @@ import {
   CarouselPrevious,
 } from "@/components/ui/storyCarousel";
 import Autoplay from "embla-carousel-autoplay";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { UserAvatar, UserAvatarImageColored } from "./UserAvatar";
+import { Input } from "./ui/input";
+import { Button } from "./ui/button";
 
 export function Story({
   users,
@@ -19,7 +22,11 @@ export function Story({
   title: string;
   viewStory: (userTitle: string) => void;
 }) {
-  const plugin = useRef(Autoplay({ delay: 3000, stopOnInteraction: true }));
+  const plugin = useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: true, playOnInit: true })
+  );
+
+  const [message, setMessage] = useState("");
 
   const currentUser = users.find((user) => user.title === title);
 
@@ -38,33 +45,45 @@ export function Story({
     return <div>User not found</div>;
   }
 
+  const handleSend = () => {
+    console.log("Message sent:", message);
+    setMessage(""); // Clear the input field
+  };
+
   return (
     <Carousel
       opts={{
         duration: 0,
         watchDrag: false,
-        // startIndex:
-        //   currentUser.completedStories < currentUser.stories.length
-        //     ? currentUser.completedStories - 1
-        //     : 0,
       }}
       className=" h-4/5 bg-white aspect-9/16 content-center"
-      // plugins={[plugin.current]}
       onMouseEnter={plugin.current.stop}
       onMouseLeave={plugin.current.reset}
       userId={currentUser.id}
     >
+      <div className="absolute top-0 left-0 flex w-full h-full z-50">
+        <div className="absolute top-2 left-2 w-15 h-15">
+          <UserAvatarImageColored user={currentUser} />
+        </div>
+        <div className="absolute top-2 right-2 text-white bg-black bg-opacity-50 px-2 py-1 rounded">
+          {currentUser.name}
+        </div>
+        <div className="absolute bottom-0 flex w-full items-center space-x-2 p-4 backdrop-blur-md">
+          <Input
+            type="message"
+            placeholder="message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+          />
+          <Button type="button" onClick={handleSend}>
+            Subscribe
+          </Button>
+        </div>
+      </div>
       <CarouselContent>
         {currentUser.stories.map((img, index) => (
-          <CarouselItem key={index} className="content-center">
-            <p>
-              {currentUser.completedStories} / {currentUser.stories.length}
-            </p>
-            <img
-              src={img.src}
-              alt={img.alt}
-              className="max-h-full w-full object-contain"
-            />
+          <CarouselItem key={index} className="relative content-center">
+            <img src={img.src} alt={img.alt} className=" object-contain" />
           </CarouselItem>
         ))}
       </CarouselContent>

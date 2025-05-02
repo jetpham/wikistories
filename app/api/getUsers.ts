@@ -42,6 +42,7 @@ export async function getUsers(): Promise<User[]> {
   const data: RawUser[] = [];
 
   const rows = $("table.wikitable tr").toArray();
+  let counter = 0;
   for (const [index, element] of rows.entries()) {
     if (index === 0) {
       continue;
@@ -59,9 +60,13 @@ export async function getUsers(): Promise<User[]> {
       if (title && img) {
         const splitTitle = title.split("/wiki/")[1];
         const stories = await getStoriesForUser(splitTitle);
+        if (stories.length === 0) {
+          continue;
+        }
 
+        const userId = counter++;
         data.push({
-          id: parseInt(id),
+          id: userId,
           name,
           title: splitTitle,
           article: article,

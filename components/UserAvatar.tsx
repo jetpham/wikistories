@@ -12,7 +12,7 @@ function UserAvatar({ user }: { user: User }) {
       <div className="flex flex-col items-center ">
         {!(user.stories.length == user.completedStories) ? (
           <div className="h-20 w-20 bg-linear-to-tr from-[#833ab4] via-[#fd1d1d] to-[#fcb045] rounded-full flex items-center justify-center">
-            <Avatar className="h-18/20 w-18/20 border-1 border-white">
+            <Avatar className="h-18/20 w-18/20 border-1 border-white bg-white">
               <AvatarImage
                 src={user.avatarImageLink}
                 alt={user.name}
@@ -23,7 +23,7 @@ function UserAvatar({ user }: { user: User }) {
           </div>
         ) : (
           <div className="h-20 w-20 bg-[#363636] rounded-full flex items-center justify-center">
-            <Avatar className="h-18/20 w-18/20 border-1 border-white">
+            <Avatar className="h-18/20 w-18/20 border-1 border-white bg-white">
               <AvatarImage
                 src={user.avatarImageLink}
                 alt={user.name}

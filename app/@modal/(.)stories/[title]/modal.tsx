@@ -8,6 +8,7 @@ import { X } from "lucide-react";
 export function Modal({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const dialogRef = useRef<ElementRef<"dialog">>(null);
+  console.log("modal");
 
   useEffect(() => {
     if (!dialogRef.current?.open) {
@@ -35,6 +36,6 @@ export function Modal({ children }: { children: React.ReactNode }) {
         </button>
       </dialog>
     </div>,
-    document.getElementById("modal-root")!
+    document.getElementById("modal-root")!,
   );
 }

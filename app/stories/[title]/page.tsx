@@ -9,7 +9,7 @@ export default async function Page({
   params: Promise<{ title: string }>;
 }) {
   const { title } = await params;
-
+  console.log("rendering story page");
   return (
     <div className="bg-black/70 h-full w-full flex items-center justify-center">
       <StoryWrapper title={title} />

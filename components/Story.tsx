@@ -8,7 +8,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/storyCarousel";
 import Autoplay from "embla-carousel-autoplay";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
 export function Story({
   users,
@@ -17,13 +17,15 @@ export function Story({
 }: {
   users: User[];
   title: string;
-  viewStory: (userId: number) => void;
+  viewStory: (userTitle: string) => void;
 }) {
-  const plugin = React.useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: true })
-  );
+  const plugin = useRef(Autoplay({ delay: 3000, stopOnInteraction: true }));
 
   const currentUser = users.find((user) => user.title === title);
+
+  useEffect(() => {
+    viewStory(title);
+  }, []);
 
   const nextUser = currentUser
     ? users.find((user) => user.id === currentUser.id + 1)
@@ -31,15 +33,6 @@ export function Story({
   const prevUser = currentUser
     ? users.find((user) => user.id === currentUser.id - 1)
     : null;
-
-  useEffect(() => {
-    if (
-      currentUser &&
-      currentUser.completedStories < currentUser.stories.length
-    ) {
-      viewStory(currentUser.id);
-    }
-  }, [currentUser, viewStory]);
 
   if (!currentUser) {
     return <div>User not found</div>;
@@ -50,10 +43,10 @@ export function Story({
       opts={{
         duration: 0,
         watchDrag: false,
-        startIndex:
-          currentUser.completedStories === currentUser.stories.length
-            ? 0
-            : currentUser.completedStories - 1,
+        // startIndex:
+        //   currentUser.completedStories < currentUser.stories.length
+        //     ? currentUser.completedStories - 1
+        //     : 0,
       }}
       className=" h-4/5 bg-white aspect-9/16 content-center"
       // plugins={[plugin.current]}
@@ -64,6 +57,9 @@ export function Story({
       <CarouselContent>
         {currentUser.stories.map((img, index) => (
           <CarouselItem key={index} className="content-center">
+            <p>
+              {currentUser.completedStories} / {currentUser.stories.length}
+            </p>
             <img
               src={img.src}
               alt={img.alt}

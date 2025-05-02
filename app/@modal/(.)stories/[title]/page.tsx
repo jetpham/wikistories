@@ -8,6 +8,7 @@ export default async function StoryModal({
 }) {
   const title = (await params).title;
 
+  console.log("rendering modal");
   return (
     <Modal>
       <StoryWrapper title={title} />

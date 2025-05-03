@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/storyCarousel";
 import Autoplay from "embla-carousel-autoplay";
 import React, { useEffect, useRef, useState } from "react";
-import { UserAvatar, UserAvatarImageColored } from "./UserAvatar";
+import { UserAvatarImageColored } from "./UserAvatar";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 
@@ -32,7 +32,7 @@ export function Story({
 
   useEffect(() => {
     viewStory(title);
-  }, []);
+  }, [title, viewStory]);
 
   const nextUser = currentUser
     ? users.find((user) => user.id === currentUser.id + 1)

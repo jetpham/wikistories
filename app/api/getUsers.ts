@@ -50,7 +50,6 @@ export async function getUsers(): Promise<User[]> {
 
     const cells = $(element).find("td");
     if (cells.length >= 5) {
-      const id = $(cells.eq(0)).text();
       const link = $(cells.eq(1)).find("a");
       const name = link.text().trim();
       const title = link.attr("href");

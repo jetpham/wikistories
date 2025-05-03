@@ -11,9 +11,9 @@ export default async function Page({
   const { title } = await params;
   console.log("rendering story page");
   return (
-    <div className="bg-black/70 h-full w-full flex items-center justify-center">
+    <div className="bg-[#1a1a1a] h-full w-full flex items-center justify-center">
       <StoryWrapper title={title} />
-      <Link className="absolute top-4 right-4 cursor-pointer " href="/">
+      <Link className="absolute top-4 right-4 cursor-pointer" href="/">
         <X color="#ffffff" className="size-10" />
       </Link>
     </div>

@@ -53,7 +53,7 @@ export async function getUsers(): Promise<User[]> {
       const link = $(cells.eq(1)).find("a");
       const name = link.text().trim();
       const title = link.attr("href");
-      const article = "https://en.wikipedia.org/" + title;
+      const article = "https://en.wikipedia.org" + title;
       const img = $(cells.eq(4)).find("img").attr("src");
       
       if (title && img) {

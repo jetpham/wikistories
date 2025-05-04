@@ -30,10 +30,10 @@ export function UserAvatarImageColored({ user }: { user: User }) {
       className={`rounded-full flex items-center justify-center ${
         !(user.stories.length == user.completedStories)
           ? "bg-gradient-to-tr from-[#833ab4] via-[#fd1d1d] to-[#fcb045]"
-          : "bg-[#363636]"
+          : "bg-[#efefef] "
       }  aspect-square`}
     >
-      <Avatar className="h-18/20 w-18/20 border-1 border-white bg-white rounded-full">
+      <Avatar className="h-18/20 w-18/20 border-2 border-white bg-white rounded-full">
         <AvatarImage
           src={user.avatarImageLink}
           alt={user.name}

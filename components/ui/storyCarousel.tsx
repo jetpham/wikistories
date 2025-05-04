@@ -222,7 +222,6 @@ function CarouselNext({
     scrollNext();
     viewStory(currentUser.title);
     if (!canScrollNext && nextUser) {
-      console.log(nextUser.title);
       redirect(`/stories/${nextUser.title}`);
     }
   };

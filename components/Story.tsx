@@ -8,13 +8,15 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/storyCarousel";
-import Autoplay from "embla-carousel-autoplay";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { UserAvatarImageColored } from "./UserAvatar";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { Ellipsis, Pause, Play } from "lucide-react";
 import Link from "next/link";
+import { type CarouselApi } from "@/components/ui/carousel";
+import { redirect } from "next/navigation";
+import Autoplay from "./custom-embla-carousel-autoplay/src/components/Autoplay";
 
 export function Story({
   users,
@@ -25,18 +27,12 @@ export function Story({
   title: string;
   viewStory: (userTitle: string) => void;
 }) {
-  const plugin = useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: true, playOnInit: true })
-  );
+  const [api, setApi] = React.useState<CarouselApi>();
+
   const [isPlaying, setIsPlaying] = useState(true);
   const [message, setMessage] = useState("");
 
   const currentUser = users.find((user) => user.title === title);
-
-  useEffect(() => {
-    viewStory(title);
-  }, [title, viewStory]);
-
   const nextUser = currentUser
     ? users.find((user) => user.id === currentUser.id + 1)
     : null;
@@ -44,13 +40,45 @@ export function Story({
     ? users.find((user) => user.id === currentUser.id - 1)
     : null;
 
+  const handleGoToNext = useCallback(() => {
+    viewStory(title);
+  }, [title, viewStory]);
+
+  const handleGoToNextAtEnd = useCallback(() => {
+    if (nextUser) {
+      redirect(`/stories/${nextUser.title}`);
+    }
+  }, [nextUser]);
+
+  useEffect(() => {
+    viewStory(title);
+  }, [title, viewStory]);
+
+  const toggleAutoplay = useCallback(() => {
+    const autoplay = api?.plugins()?.autoplay;
+    if (!autoplay) return;
+
+    const playOrStop = autoplay.isPlaying() ? autoplay.stop : autoplay.play;
+    playOrStop();
+  }, [api]);
+
+  const plugin = useRef(
+    Autoplay({
+      jump: true,
+      delay: 5000,
+      playOnInit: true,
+      onNextCallback: handleGoToNext,
+      onNextAtEndCallback: handleGoToNextAtEnd,
+    })
+  );
+
   if (!currentUser) {
     return <div>User not found</div>;
   }
 
   const handleSend = () => {
     console.log("Message sent:", message);
-    setMessage(""); // Clear the input field
+    setMessage("");
   };
 
   return (
@@ -59,10 +87,10 @@ export function Story({
         duration: 0,
         watchDrag: false,
       }}
+      plugins={[plugin.current]}
       className=" h-4/5 bg-white aspect-9/16 content-center"
-      onMouseEnter={plugin.current.stop}
-      onMouseLeave={plugin.current.reset}
       userId={currentUser.id}
+      setApi={setApi}
     >
       <div className="absolute top-0 left-0 flex w-full h-full z-50">
         <div className="absolute top-0 w-full bg-linear-to-t from-transparent to-black/60 h-1/5">
@@ -83,7 +111,10 @@ export function Story({
                 <Button
                   variant="ghost"
                   className="text-white"
-                  onClick={() => setIsPlaying((prev) => !prev)}
+                  onClick={() => {
+                    setIsPlaying((prev) => !prev);
+                    toggleAutoplay();
+                  }}
                 >
                   {isPlaying ? <Pause /> : <Play />}
                 </Button>

@@ -21,10 +21,10 @@ function CarouselOfUserAvatars({ users }: { users: User[] }) {
   };
 
   return (
-    <Carousel opts={carouselOptions} className="p-8">
-      <CarouselContent>
+    <Carousel opts={carouselOptions} className="p-2">
+      <CarouselContent className="pl-4">
         {users.map((user) => (
-          <CarouselItem key={user.id} className="flex-none w-30 !pl-2 pr-2">
+          <CarouselItem key={user.id} className="flex-none w-30 !pl-1 pr-1">
             <UserAvatar user={user} />
           </CarouselItem>
         ))}

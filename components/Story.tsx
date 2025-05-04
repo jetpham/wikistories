@@ -122,7 +122,7 @@ export function Story({
             <img
               src={img.src}
               alt={img.alt}
-              className="object-contain w-full h-max-full aspect-9/16"
+              className=" object-contain w-full h-max-full aspect-9/16"
             />
           </CarouselItem>
         ))}

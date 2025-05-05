@@ -8,15 +8,14 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/storyCarousel";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { UserAvatarImageColored } from "./UserAvatar";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { Ellipsis, Pause, Play } from "lucide-react";
 import Link from "next/link";
 import { type CarouselApi } from "@/components/ui/carousel";
-import { redirect } from "next/navigation";
-import Autoplay from "./custom-embla-carousel-autoplay/src/components/Autoplay";
+import { Progress } from "@/components/ui/progress";
 
 export function Story({
   users,
@@ -28,7 +27,6 @@ export function Story({
   viewStory: (userTitle: string) => void;
 }) {
   const [api, setApi] = React.useState<CarouselApi>();
-
   const [isPlaying, setIsPlaying] = useState(true);
   const [message, setMessage] = useState("");
 
@@ -40,44 +38,15 @@ export function Story({
     ? users.find((user) => user.id === currentUser.id - 1)
     : null;
 
-  const handleGoToNext = useCallback(() => {
-    viewStory(title);
-  }, [title, viewStory]);
-
-  const handleGoToNextAtEnd = useCallback(() => {
-    if (nextUser) {
-      redirect(`/stories/${nextUser.title}`);
-    }
-  }, [nextUser]);
-
   useEffect(() => {
     viewStory(title);
   }, [title, viewStory]);
-
-  const toggleAutoplay = useCallback(() => {
-    const autoplay = api?.plugins()?.autoplay;
-    if (!autoplay) return;
-
-    const playOrStop = autoplay.isPlaying() ? autoplay.stop : autoplay.play;
-    playOrStop();
-  }, [api]);
-
-  const plugin = useRef(
-    Autoplay({
-      jump: true,
-      delay: 5000,
-      playOnInit: true,
-      onNextCallback: handleGoToNext,
-      onNextAtEndCallback: handleGoToNextAtEnd,
-    })
-  );
 
   if (!currentUser) {
     return <div>User not found</div>;
   }
 
   const handleSend = () => {
-    console.log("Message sent:", message);
     setMessage("");
   };
 
@@ -87,7 +56,6 @@ export function Story({
         duration: 0,
         watchDrag: false,
       }}
-      plugins={[plugin.current]}
       className=" h-4/5 bg-white aspect-9/16 content-center"
       userId={currentUser.id}
       setApi={setApi}
@@ -95,6 +63,20 @@ export function Story({
       <div className="absolute top-0 left-0 flex w-full h-full z-50">
         <div className="absolute top-0 w-full bg-linear-to-t from-transparent to-black/60 h-1/5">
           <div className="absolute top-0 items-center justify-between p-2 w-full ">
+            <div className="flex w-full pb-1 content-center">
+              {currentUser.stories.map((_, storyIndex) => {
+                const index = api?.internalEngine().index.get() ?? 0;
+                return (
+                  <Progress
+                    key={storyIndex}
+                    value={
+                      storyIndex < index ? 100 : storyIndex > index ? 0 : 50
+                    }
+                    className="flex-1"
+                  />
+                );
+              })}
+            </div>
             <div className="flex items-center justify-between w-full ">
               <div className="flex items-center space-x-2">
                 <div className="w-8 h-8">
@@ -113,7 +95,6 @@ export function Story({
                   className="text-white"
                   onClick={() => {
                     setIsPlaying((prev) => !prev);
-                    toggleAutoplay();
                   }}
                 >
                   {isPlaying ? <Pause /> : <Play />}

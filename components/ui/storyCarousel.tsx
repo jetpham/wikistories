@@ -9,7 +9,6 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { User } from "@/app/types";
-import { redirect } from "next/navigation";
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
@@ -168,21 +167,17 @@ function CarouselPrevious({
   variant = "outline",
   size = "icon",
   prevUser = null,
-  setCurrentIndex,
+  goPrev,
   ...props
 }: React.ComponentProps<typeof Button> & {
-  prevUser?: User | null;
-  setCurrentIndex: () => void;
+  prevUser: User | null;
+  goPrev: (canScrollPrev: boolean) => void;
 }) {
   const { orientation, scrollPrev, canScrollPrev } = useCarousel();
 
   const handleGoPrev = () => {
-    if (!canScrollPrev && prevUser) {
-      redirect(`/stories/${prevUser.title}`);
-    } else {
-      setCurrentIndex();
-      scrollPrev();
-    }
+    scrollPrev();
+    goPrev(canScrollPrev);
   };
 
   return (
@@ -212,27 +207,18 @@ function CarouselNext({
   className,
   variant = "outline",
   size = "icon",
-  currentUser,
   nextUser = null,
-  viewStory,
-  setCurrentIndex,
+  goNext,
   ...props
 }: React.ComponentProps<typeof Button> & {
   nextUser: User | null;
-  currentUser: User;
-  viewStory: (userTitle: string) => void;
-  setCurrentIndex: () => void;
+  goNext: (canScrollNext: boolean) => void;
 }) {
   const { orientation, scrollNext, canScrollNext } = useCarousel();
 
   const handleGoNext = () => {
     scrollNext();
-    viewStory(currentUser.title);
-    if (!canScrollNext && nextUser) {
-      redirect(`/stories/${nextUser.title}`);
-    } else {
-      setCurrentIndex();
-    }
+    goNext(canScrollNext);
   };
 
   return (

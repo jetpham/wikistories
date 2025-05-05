@@ -15,6 +15,7 @@ import { Button } from "./ui/button";
 import { Ellipsis, Pause, Play } from "lucide-react";
 import Link from "next/link";
 import { Progress } from "@/components/ui/progress";
+import { redirect } from "next/navigation";
 
 export function Story({
   users,
@@ -33,6 +34,7 @@ export function Story({
   const nextUser = currentUser
     ? users.find((user) => user.id === currentUser.id + 1)
     : null;
+
   const prevUser = currentUser
     ? users.find((user) => user.id === currentUser.id - 1)
     : null;
@@ -47,23 +49,39 @@ export function Story({
     viewStory(title);
   }, [title, viewStory]);
 
-  const handleNext = useCallback(() => {
-    console.log("next");
-    setCurrentIndex(() => {
-      const nextIndex = currentIndex + 1;
-      return currentUser && nextIndex < currentUser.stories.length
-        ? nextIndex
-        : currentIndex;
-    });
-  }, [currentIndex, currentUser]);
+  const handlePrev = useCallback(
+    (canScrollPrev: boolean) => {
+      if (!canScrollPrev && prevUser) {
+        redirect(`/stories/${prevUser.title}`);
+      } else {
+        setCurrentIndex(() => {
+          const prevIndex = currentIndex - 1;
+          return prevIndex >= 0 ? prevIndex : currentIndex;
+        });
+      }
+    },
+    [currentIndex, prevUser]
+  );
 
-  const handlePrev = useCallback(() => {
-    console.log("prev");
-    setCurrentIndex(() => {
-      const prevIndex = currentIndex - 1;
-      return prevIndex >= 0 ? prevIndex : currentIndex;
-    });
-  }, [currentIndex]);
+  const handleNext = useCallback(
+    (canScrollNext: boolean) => {
+      if (currentUser && currentIndex === currentUser.completedStories - 1) {
+        viewStory(currentUser.title);
+      }
+
+      if (!canScrollNext && nextUser) {
+        redirect(`/stories/${nextUser.title}`);
+      } else {
+        setCurrentIndex(() => {
+          const nextIndex = currentIndex + 1;
+          return currentUser && nextIndex < currentUser.stories.length
+            ? nextIndex
+            : currentIndex;
+        });
+      }
+    },
+    [currentIndex, currentUser, nextUser, viewStory]
+  );
 
   if (!currentUser) {
     return <div>User not found</div>;
@@ -161,13 +179,8 @@ export function Story({
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious prevUser={prevUser} setCurrentIndex={handlePrev} />
-      <CarouselNext
-        nextUser={nextUser ?? null}
-        currentUser={currentUser}
-        viewStory={viewStory}
-        setCurrentIndex={handleNext}
-      />
+      <CarouselPrevious prevUser={prevUser ?? null} goPrev={handlePrev} />
+      <CarouselNext nextUser={nextUser ?? null} goNext={handleNext} />
     </Carousel>
   );
 }

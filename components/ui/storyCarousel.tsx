@@ -168,14 +168,19 @@ function CarouselPrevious({
   variant = "outline",
   size = "icon",
   prevUser = null,
+  setCurrentIndex,
   ...props
-}: React.ComponentProps<typeof Button> & { prevUser?: User | null }) {
+}: React.ComponentProps<typeof Button> & {
+  prevUser?: User | null;
+  setCurrentIndex: () => void;
+}) {
   const { orientation, scrollPrev, canScrollPrev } = useCarousel();
 
   const handleGoPrev = () => {
     if (!canScrollPrev && prevUser) {
       redirect(`/stories/${prevUser.title}`);
     } else {
+      setCurrentIndex();
       scrollPrev();
     }
   };
@@ -210,11 +215,13 @@ function CarouselNext({
   currentUser,
   nextUser = null,
   viewStory,
+  setCurrentIndex,
   ...props
 }: React.ComponentProps<typeof Button> & {
   nextUser: User | null;
   currentUser: User;
   viewStory: (userTitle: string) => void;
+  setCurrentIndex: () => void;
 }) {
   const { orientation, scrollNext, canScrollNext } = useCarousel();
 
@@ -223,6 +230,8 @@ function CarouselNext({
     viewStory(currentUser.title);
     if (!canScrollNext && nextUser) {
       redirect(`/stories/${nextUser.title}`);
+    } else {
+      setCurrentIndex();
     }
   };
 

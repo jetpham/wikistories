@@ -8,13 +8,12 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/storyCarousel";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { UserAvatarImageColored } from "./UserAvatar";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { Ellipsis, Pause, Play } from "lucide-react";
 import Link from "next/link";
-import { type CarouselApi } from "@/components/ui/carousel";
 import { Progress } from "@/components/ui/progress";
 
 export function Story({
@@ -26,11 +25,11 @@ export function Story({
   title: string;
   viewStory: (userTitle: string) => void;
 }) {
-  const [api, setApi] = React.useState<CarouselApi>();
   const [isPlaying, setIsPlaying] = useState(true);
   const [message, setMessage] = useState("");
 
   const currentUser = users.find((user) => user.title === title);
+
   const nextUser = currentUser
     ? users.find((user) => user.id === currentUser.id + 1)
     : null;
@@ -38,9 +37,33 @@ export function Story({
     ? users.find((user) => user.id === currentUser.id - 1)
     : null;
 
+  const [currentIndex, setCurrentIndex] = useState(
+    (currentUser?.completedStories ?? 0) < (currentUser?.stories?.length ?? 0)
+      ? currentUser?.completedStories ?? 0
+      : 0
+  );
+
   useEffect(() => {
     viewStory(title);
   }, [title, viewStory]);
+
+  const handleNext = useCallback(() => {
+    console.log("next");
+    setCurrentIndex(() => {
+      const nextIndex = currentIndex + 1;
+      return currentUser && nextIndex < currentUser.stories.length
+        ? nextIndex
+        : currentIndex;
+    });
+  }, [currentIndex, currentUser]);
+
+  const handlePrev = useCallback(() => {
+    console.log("prev");
+    setCurrentIndex(() => {
+      const prevIndex = currentIndex - 1;
+      return prevIndex >= 0 ? prevIndex : currentIndex;
+    });
+  }, [currentIndex]);
 
   if (!currentUser) {
     return <div>User not found</div>;
@@ -55,22 +78,21 @@ export function Story({
       opts={{
         duration: 0,
         watchDrag: false,
+        startIndex: currentIndex,
       }}
-      className=" h-4/5 bg-white aspect-9/16 content-center"
+      className="max-h-4/5 min-h-4/5 bg-white aspect-9/16 content-center"
       userId={currentUser.id}
-      setApi={setApi}
     >
       <div className="absolute top-0 left-0 flex w-full h-full z-50">
         <div className="absolute top-0 w-full bg-linear-to-t from-transparent to-black/60 h-1/5">
           <div className="absolute top-0 items-center justify-between p-2 w-full ">
             <div className="flex w-full pb-1 content-center">
-              {currentUser.stories.map((_, storyIndex) => {
-                const index = api?.internalEngine().index.get() ?? 0;
+              {currentUser.stories.map((_, index) => {
                 return (
                   <Progress
-                    key={storyIndex}
+                    key={index}
                     value={
-                      storyIndex < index ? 100 : storyIndex > index ? 0 : 50
+                      index < currentIndex ? 100 : index > currentIndex ? 0 : 50
                     }
                     className="flex-1"
                   />
@@ -134,16 +156,17 @@ export function Story({
             <img
               src={img.src}
               alt={img.alt}
-              className=" object-contain w-full h-max-full aspect-9/16"
+              className="object-contain w-full h-max-full aspect-9/16"
             />
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious prevUser={prevUser} />
+      <CarouselPrevious prevUser={prevUser} setCurrentIndex={handlePrev} />
       <CarouselNext
         nextUser={nextUser ?? null}
         currentUser={currentUser}
         viewStory={viewStory}
+        setCurrentIndex={handleNext}
       />
     </Carousel>
   );

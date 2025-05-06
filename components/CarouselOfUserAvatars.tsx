@@ -1,6 +1,6 @@
 // components/CarouselOfUserAvatars.tsx
 "use client";
-
+import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 import * as React from "react";
 import {
   Carousel,
@@ -21,7 +21,11 @@ function CarouselOfUserAvatars({ users }: { users: User[] }) {
   };
 
   return (
-    <Carousel opts={carouselOptions} className="p-2">
+    <Carousel
+      opts={carouselOptions}
+      plugins={[WheelGesturesPlugin()]}
+      className="p-2"
+    >
       <CarouselContent className="pl-4">
         {users.map((user) => (
           <CarouselItem key={user.id} className="flex-none w-30 !pl-1 pr-1">

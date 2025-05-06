@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <CarouselOfUserAvatars users={users} />
-      <div className="flex justify-center items-center gap-4">
+      <div className="flex flex-col justify-center items-center gap-4">
         <Link
           href={"https://github.com/jetpham/wikistories"}
           className={` ${buttonVariants({

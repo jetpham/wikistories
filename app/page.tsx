@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <>
-      <Card className="place-content-center place-self-center w-1/2 mt-10 mb-5">
+      <Card className="flex place-content-center place-self-center mt-10 mb-5">
         <CardHeader className="text-2xl font-bold flex items-center">
           <span>WikiStories</span>
           <Link

@@ -12,7 +12,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import { UserAvatarImageColored } from "./UserAvatar";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
-import { Ellipsis, Pause, Play } from "lucide-react";
+import { Ellipsis, ExternalLink, Pause, Play } from "lucide-react";
 import Link from "next/link";
 import { Progress } from "@/components/ui/progress";
 import { redirect } from "next/navigation";
@@ -132,9 +132,10 @@ export function Story({
                 </div>
                 <Link
                   href={currentUser.article}
-                  className="text-sm font-semibold text-white hover:text-gray-200 hover:underline text-ellipsis overflow-hidden whitespace-nowrap max-w-[130px]"
+                  className="text-sm font-semibold text-white hover:text-gray-200 hover:underline text-ellipsis overflow-hidden whitespace-nowrap max-w-[130px] flex flex=row"
                 >
                   {currentUser.name}
+                  <ExternalLink className="pl-1 size-4" />
                 </Link>
               </div>
               <div className="flex space-x-1">
@@ -193,7 +194,11 @@ export function Story({
         ))}
       </CarouselContent>
       <CarouselPrevious prevUser={prevUser ?? null} goPrev={handlePrev} />
-      <CarouselNext nextUser={nextUser ?? null} goNext={handleNext} storyDirectly={storyDirectly}/>
+      <CarouselNext
+        nextUser={nextUser ?? null}
+        goNext={handleNext}
+        storyDirectly={storyDirectly}
+      />
     </Carousel>
   );
 }

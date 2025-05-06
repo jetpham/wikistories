@@ -11,8 +11,8 @@ export default function Home() {
   const { users } = useUsersStore((state) => state);
 
   return (
-    <>
-      <Card className="flex place-content-center place-self-center mt-10 mb-5">
+    <div className="flex flex-col">
+      <Card className="flex place-content-center place-self-center mt-10 mb-5 w-fit">
         <CardHeader className="text-2xl font-bold flex items-center">
           <span>WikiStories</span>
           <Link
@@ -40,6 +40,6 @@ export default function Home() {
         </CardContent>
       </Card>
       <CarouselOfUserAvatars users={users} />
-    </>
+    </div>
   );
 }

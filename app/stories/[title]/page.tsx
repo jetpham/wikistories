@@ -11,7 +11,7 @@ export default async function Page({
   const { title } = await params;
   return (
     <div className="bg-[#1a1a1a] h-full w-full flex items-center justify-center">
-      <StoryWrapper title={title} />
+      <StoryWrapper title={title} storyDirectly={true} />
       <Link className="absolute top-4 right-4 cursor-pointer" href="/">
         <X color="#ffffff" className="size-10" />
       </Link>

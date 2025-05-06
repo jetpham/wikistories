@@ -10,7 +10,7 @@ export default async function StoryModal({
 
   return (
     <Modal>
-      <StoryWrapper title={title} />
+      <StoryWrapper title={title} storyDirectly={false} />
     </Modal>
   );
 }

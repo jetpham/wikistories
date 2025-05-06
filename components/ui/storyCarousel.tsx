@@ -209,10 +209,12 @@ function CarouselNext({
   size = "icon",
   nextUser = null,
   goNext,
+  storyDirectly,
   ...props
 }: React.ComponentProps<typeof Button> & {
   nextUser: User | null;
   goNext: (canScrollNext: boolean) => void;
+  storyDirectly: boolean;
 }) {
   const { orientation, scrollNext, canScrollNext } = useCarousel();
 
@@ -231,10 +233,10 @@ function CarouselNext({
         orientation === "horizontal"
           ? "top-1/2 -right-12 -translate-y-1/2"
           : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
-        !canScrollNext && !nextUser && "invisible",
+        !canScrollNext && (!nextUser || storyDirectly) && "invisible",
         className
       )}
-      disabled={!canScrollNext && !nextUser}
+      disabled={!canScrollNext && (!nextUser || storyDirectly)}
       onClick={handleGoNext}
       {...props}
     >

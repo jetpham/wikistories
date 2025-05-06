@@ -21,10 +21,12 @@ export function Story({
   users,
   title,
   viewStory,
+  storyDirectly,
 }: {
   users: User[];
   title: string;
   viewStory: (userTitle: string) => void;
+  storyDirectly: boolean;
 }) {
   const [isPlaying, setIsPlaying] = useState(true);
   const [message, setMessage] = useState("");
@@ -69,8 +71,12 @@ export function Story({
         viewStory(currentUser.title);
       }
 
-      if (!canScrollNext && nextUser) {
-        redirect(`/stories/${nextUser.title}`);
+      if (!canScrollNext) {
+        if (nextUser) {
+          redirect(`/stories/${nextUser.title}`);
+        } else if (storyDirectly) {
+          redirect(`/`);
+        }
       } else {
         setCurrentIndex(() => {
           const nextIndex = currentIndex + 1;
@@ -80,7 +86,7 @@ export function Story({
         });
       }
     },
-    [currentIndex, currentUser, nextUser, viewStory]
+    [currentIndex, currentUser, nextUser, storyDirectly, viewStory]
   );
 
   if (!currentUser) {
@@ -187,7 +193,7 @@ export function Story({
         ))}
       </CarouselContent>
       <CarouselPrevious prevUser={prevUser ?? null} goPrev={handlePrev} />
-      <CarouselNext nextUser={nextUser ?? null} goNext={handleNext} />
+      <CarouselNext nextUser={nextUser ?? null} goNext={handleNext} storyDirectly={storyDirectly}/>
     </Carousel>
   );
 }

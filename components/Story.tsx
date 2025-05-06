@@ -112,7 +112,9 @@ export function Story({
                     value={
                       index < currentIndex ? 100 : index > currentIndex ? 0 : 50
                     }
-                    className="flex-1"
+                    className={`flex-1 ${
+                      index === currentIndex ? "h-1.5" : ""
+                    }`}
                   />
                 );
               })}
@@ -154,6 +156,11 @@ export function Story({
                 placeholder={`Reply to ${currentUser.name}`}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    handleSend();
+                  }
+                }}
                 className="w-full pr-16 text-white rounded-full placeholder:text-rgb(217,217,217)"
               />
               <Button

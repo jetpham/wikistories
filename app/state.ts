@@ -20,16 +20,6 @@ export const createUsersStore = (initState: UsersState = defaultInitState) => {
     ...initState,
     viewStory: (userTitle) =>
       set((state) => {
-        const currentUser = state.users.find(
-          (user) => user.title === userTitle,
-        );
-        if (currentUser) {
-          console.log(currentUser.title);
-          console.log(
-            currentUser.completedStories + "/" + currentUser.stories.length,
-          );
-        }
-
         const updatedUsers = state.users.map((user) =>
           user.title === userTitle
             ? {
@@ -41,16 +31,6 @@ export const createUsersStore = (initState: UsersState = defaultInitState) => {
               }
             : user,
         );
-        const updatedCurrentUser = updatedUsers.find(
-          (user) => user.title === userTitle,
-        );
-        if (updatedCurrentUser) {
-          console.log(
-            updatedCurrentUser.completedStories +
-              "/" +
-              updatedCurrentUser.stories.length,
-          );
-        }
         return { users: updatedUsers };
       }),
   }));
